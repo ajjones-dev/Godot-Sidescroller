@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfsregpg5c6b2"]
+
+[ext_resource type="Script" path="res://characters/unit.gd" id="1_t02ga"]
+[ext_resource type="Texture2D" uid="uid://blyr6w4tjs7dd" path="res://assets/sprites/robot_blueDrive1.png" id="2_o0xmj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_by2qc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o0xmj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x84b2"]
+size = Vector2(156, 151)
+
+[node name="Unit" type="CharacterBody2D"]
+script = ExtResource("1_t02ga")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -76)
+sprite_frames = SubResource("SpriteFrames_by2qc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -75.5)
+shape = SubResource("RectangleShape2D_x84b2")
