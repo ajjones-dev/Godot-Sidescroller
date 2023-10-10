@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ujgn8iax6bw7" path="res://assets/sprites/player_tilesheet.png" id="1_jkns5"]
 [ext_resource type="Script" path="res://characters/player.gd" id="1_tx1br"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ne85"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x84i2"]
 atlas = ExtResource("1_jkns5")
 region = Rect2(0, 0, 80, 110)
 
@@ -27,7 +27,7 @@ region = Rect2(80, 110, 80, 110)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5ne85")
+"texture": SubResource("AtlasTexture_x84i2")
 }],
 "loop": true,
 "name": &"default",
@@ -71,7 +71,7 @@ script = ExtResource("1_tx1br")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -55)
 sprite_frames = SubResource("SpriteFrames_fvi7u")
-animation = &"walk"
+frame_progress = 0.594302
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -43)
