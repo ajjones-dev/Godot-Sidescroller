@@ -40,15 +40,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo2yx"]
-size = Vector2(155, 150)
+size = Vector2(78, 76)
 
 [node name="BlueRobot" type="CharacterBody2D"]
 script = ExtResource("1_mvil2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -77)
+position = Vector2(0, -38)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_fa3me")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -76)
+position = Vector2(0, -38)
 shape = SubResource("RectangleShape2D_bo2yx")
