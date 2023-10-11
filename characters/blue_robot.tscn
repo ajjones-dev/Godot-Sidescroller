@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://capmsshuwpy7k"]
+
+[ext_resource type="Texture2D" uid="uid://blyr6w4tjs7dd" path="res://assets/sprites/robot_blueDrive1.png" id="1_ln0wb"]
+[ext_resource type="Script" path="res://characters/unit.gd" id="1_mvil2"]
+[ext_resource type="Texture2D" uid="uid://dlsscqgeh7apc" path="res://assets/sprites/robot_blueDamage1.png" id="2_1r41g"]
+[ext_resource type="Texture2D" uid="uid://devqb1ly76o3x" path="res://assets/sprites/robot_blueDamage2.png" id="3_dyp3k"]
+[ext_resource type="Texture2D" uid="uid://bu4e8tymk8xpg" path="res://assets/sprites/robot_blueDrive2.png" id="4_dspxp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fa3me"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ln0wb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1r41g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dyp3k")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ln0wb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dspxp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo2yx"]
+size = Vector2(155, 150)
+
+[node name="BlueRobot" type="CharacterBody2D"]
+script = ExtResource("1_mvil2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -77)
+sprite_frames = SubResource("SpriteFrames_fa3me")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -76)
+shape = SubResource("RectangleShape2D_bo2yx")

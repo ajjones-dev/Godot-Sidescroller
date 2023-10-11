@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5bor0yy8w4ya"]
+[gd_scene load_steps=7 format=3 uid="uid://b5bor0yy8w4ya"]
 
 [ext_resource type="PackedScene" uid="uid://bhdqyg0uua4m5" path="res://characters/player.tscn" id="1_3gjc5"]
 [ext_resource type="Texture2D" uid="uid://bdglxyjrrc6ob" path="res://assets/tilesheets/industrial_tilesheet.png" id="1_esk2p"]
+[ext_resource type="PackedScene" uid="uid://capmsshuwpy7k" path="res://characters/blue_robot.tscn" id="3_8kfnp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iv2l2"]
 
@@ -364,3 +365,7 @@ layer_0/tile_data = PackedInt32Array(393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 3
 
 [node name="Player" parent="." instance=ExtResource("1_3gjc5")]
 position = Vector2(243, 409)
+
+[node name="BlueRobot" parent="." instance=ExtResource("3_8kfnp")]
+position = Vector2(363, 420)
+move_direction = Vector2(100, 0)

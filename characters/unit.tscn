@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfsregpg5c6b2"]
+[gd_scene load_steps=6 format=3 uid="uid://dfsregpg5c6b2"]
 
 [ext_resource type="Script" path="res://characters/unit.gd" id="1_t02ga"]
 [ext_resource type="Texture2D" uid="uid://blyr6w4tjs7dd" path="res://assets/sprites/robot_blueDrive1.png" id="2_o0xmj"]
+[ext_resource type="Texture2D" uid="uid://bu4e8tymk8xpg" path="res://assets/sprites/robot_blueDrive2.png" id="3_rf6sa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_by2qc"]
 animations = [{
@@ -12,6 +13,17 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o0xmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rf6sa")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x84b2"]
@@ -23,6 +35,7 @@ script = ExtResource("1_t02ga")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -76)
 sprite_frames = SubResource("SpriteFrames_by2qc")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -75.5)
