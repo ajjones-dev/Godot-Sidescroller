@@ -1,14 +1,15 @@
-class_name State
 extends Node
+class_name State
 
 @export var animation_name: String
-@export var move_speed: float = 400
+signal ChangeState
 
-var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
+var body : Unit
 
 ## Skeleton functions to be handled by individual states
 func enter():
-	pass
+	body.anim_player.play(animation_name)
 
 func exit():
 	pass

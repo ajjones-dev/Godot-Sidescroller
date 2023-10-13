@@ -44,8 +44,6 @@ size = Vector2(78, 76)
 
 [node name="BlueRobot" type="CharacterBody2D"]
 script = ExtResource("1_jpkjn")
-speed = 45.0
-move_direction = Vector2(150, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -38)
@@ -55,3 +53,9 @@ sprite_frames = SubResource("SpriteFrames_fa3me")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -38)
 shape = SubResource("RectangleShape2D_bo2yx")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Walk" type="Node" parent="StateMachine"]
