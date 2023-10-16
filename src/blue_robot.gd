@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name BlueRobot
 
 @onready var state_machine : StateMachine = $StateMachine
 @export var speed : float = 30.0

@@ -10,6 +10,7 @@ func init(parent : CharacterBody2D):
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.ChangeState.connect(change_state)
+	current_state = initial_state
 
 func change_state(calling_state : State, new_state):
 	if current_state != calling_state:

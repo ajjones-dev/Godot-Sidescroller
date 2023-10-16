@@ -22,6 +22,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("1_ln0wb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dspxp")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_1r41g")
 }, {
 "duration": 1.0,
@@ -53,6 +64,7 @@ script = ExtResource("1_jpkjn")
 position = Vector2(0, -38)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_fa3me")
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -38)
@@ -62,11 +74,17 @@ shape = SubResource("RectangleShape2D_bo2yx")
 script = ExtResource("6_5i2di")
 initial_state = NodePath("Fall")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
 script = ExtResource("7_tj4j5")
+parent = NodePath("../..")
+animation_name = "default"
 
-[node name="Walk" type="Node" parent="StateMachine"]
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
 script = ExtResource("8_8gusc")
+parent = NodePath("../..")
+animation_name = "walk"
 
-[node name="Fall" type="Node" parent="StateMachine"]
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
 script = ExtResource("9_r2u8p")
+parent = NodePath("../..")
+animation_name = "fall"

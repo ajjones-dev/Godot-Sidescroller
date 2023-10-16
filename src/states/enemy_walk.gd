@@ -1,6 +1,8 @@
 extends State
 class_name EnemyWalk
 
+@export var parent : CharacterBody2D
+
 # Called when the node enters the scene tree for the first time.
 func init(parent):
 	parent.starting_position = parent.position

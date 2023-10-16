@@ -2,6 +2,7 @@ extends State
 class_name EnemyIdle
 
 @export var wait_time : float = 0.5
+@export var parent : CharacterBody2D
 
 func enter():
 	super()
