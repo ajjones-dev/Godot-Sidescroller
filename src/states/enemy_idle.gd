@@ -5,10 +5,10 @@ class_name EnemyIdle
 
 func enter():
 	super()
-	body.velocity.x = 0.0
-	body.velocity.y = 0.0
+	parent.velocity.x = 0.0
+	parent.velocity.y = 0.0
 
-func _physics_process(delta):
+func update_physics(delta):
 	if wait_time > 0:
 		wait_time -= delta
 	else:

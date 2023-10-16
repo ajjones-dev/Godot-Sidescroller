@@ -10,7 +10,7 @@ func _ready():
 	state_machine.init(self)
 
 func _physics_process(delta):
-	state_machine._physics_process(delta)
+	state_machine.update_physics(delta)
 
 func die():
 	queue_free()

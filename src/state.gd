@@ -5,11 +5,11 @@ class_name State
 signal ChangeState
 
 var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
-var body : CharacterBody2D
+@onready var parent : CharacterBody2D = $CharacterBody2D
 
 ## Skeleton functions to be handled by individual states
 func enter():
-	body.anim_player.play(animation_name)
+	parent.anim_player.play(animation_name)
 
 func exit():
 	pass

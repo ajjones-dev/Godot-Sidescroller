@@ -23,11 +23,11 @@ func change_state(calling_state : State, new_state):
 
 func update_physics(delta):
 	if current_state:
-		current_state._physics_process(delta)
+		current_state.update_physics(delta)
 
 func update_process(delta):
 	if current_state:
-		current_state._process(delta)
+		current_state.update_process(delta)
 
 func update_event(event):
 	pass
