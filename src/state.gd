@@ -5,7 +5,7 @@ class_name State
 signal ChangeState
 
 var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
-var body : Unit
+var body : CharacterBody2D
 
 ## Skeleton functions to be handled by individual states
 func enter():
@@ -14,11 +14,11 @@ func enter():
 func exit():
 	pass
 
-func _input(event):
+func update_event(event):
 	pass
 
-func _process(delta):
+func update_process(delta):
 	pass
 
-func _physics_process(delta):
+func update_physics(delta):
 	pass

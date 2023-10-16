@@ -1,5 +1,5 @@
 extends State
-class_name Idle
+class_name EnemyIdle
 
 @export var wait_time : float = 0.5
 

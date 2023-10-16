@@ -6,5 +6,5 @@ func enter():
 func _input(event):
 	super(event)
 
-func _physics_process(delta):
+func update_physics(delta):
 	super(delta)
