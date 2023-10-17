@@ -11,6 +11,8 @@ func enter():
 func update_physics(delta):
 	if not parent.is_on_floor():
 		parent.velocity.y += gravity * delta
+		animation_player.flip_v = true
 		parent.move_and_slide()
 	else:
+		animation_player.flip_v = false
 		ChangeState.emit(self, "idle")
