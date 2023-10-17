@@ -14,10 +14,28 @@ func enter():
 func update_physics(delta):
 	parent.velocity = parent.position.direction_to(parent.target_position) * parent.speed
 	
+	## Fall detection. Switches to Fall State if not touching the floor.
+	if not parent.is_on_floor():
+		ChangeState.emit(self, "fall")
+	
+	## Wall detection. Resets target position if enemy hits wall.
+	if parent.is_on_wall():
+		if animation_player.flip_h:
+			parent.target_position = parent.position + parent.move_direction
+		else:
+			parent.target_position = parent.position - parent.move_direction
+	
+	## Reached destination. Checks if target has reached destination and flips target.
 	if parent.position.distance_to(parent.target_position) <= 1:
-		animation_player.flip_h = !animation_player.flip_h
 		if parent.position.distance_to(parent.starting_position) <= 1:
 			parent.target_position = parent.starting_position + parent.move_direction
 		else:
 			parent.target_position = parent.starting_position
+	
+	## Direction detection. Orients sprite depending on motion.
+	if parent.velocity.x >= 0:
+		animation_player.flip_h = false
+	else:
+		animation_player.flip_h = true
+	
 	parent.move_and_slide()
