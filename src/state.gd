@@ -1,17 +1,18 @@
 extends Node
 class_name State
 
-@export var animation_name: String
+@export var animation_name : String
+@onready var animation_player : AnimatedSprite2D = get_node("../../AnimatedSprite2D")
 signal ChangeState
 
 var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 ## Skeleton functions to be handled by individual states
 func enter():
-	pass
+	animation_player.play(animation_name)
 
 func exit():
-	pass
+	animation_player.stop()
 
 func update_event(event):
 	pass

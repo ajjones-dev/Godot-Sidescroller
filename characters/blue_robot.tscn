@@ -64,7 +64,6 @@ script = ExtResource("1_jpkjn")
 position = Vector2(0, -38)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_fa3me")
-animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -38)

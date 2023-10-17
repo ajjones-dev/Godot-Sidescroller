@@ -368,3 +368,4 @@ position = Vector2(243, 409)
 
 [node name="BlueRobot" parent="." instance=ExtResource("3_8kfnp")]
 position = Vector2(397, 320)
+move_direction = Vector2(300, 0)
