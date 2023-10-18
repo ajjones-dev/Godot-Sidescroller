@@ -76,3 +76,7 @@ frame_progress = 0.401336
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -43)
 shape = SubResource("CapsuleShape2D_tjfg5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_bottom = 1000
