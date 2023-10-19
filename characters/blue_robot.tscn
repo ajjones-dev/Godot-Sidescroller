@@ -58,6 +58,7 @@ animations = [{
 size = Vector2(78, 76)
 
 [node name="BlueRobot" type="CharacterBody2D"]
+z_index = 3
 script = ExtResource("1_jpkjn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
