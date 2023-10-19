@@ -407,3 +407,4 @@ layer_1/tile_data = PackedInt32Array(65542, 131072, 6, 65543, 196608, 6, 65544, 
 [node name="Player" parent="." instance=ExtResource("2_at8go")]
 z_as_relative = false
 position = Vector2(113, 138)
+floor_max_angle = 0.965167
