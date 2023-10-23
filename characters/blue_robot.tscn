@@ -72,7 +72,7 @@ shape = SubResource("RectangleShape2D_bo2yx")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_5i2di")
-initial_state = NodePath("Fall")
+initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
 script = ExtResource("7_tj4j5")

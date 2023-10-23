@@ -31,4 +31,8 @@ func update_process(delta):
 		current_state.update_process(delta)
 
 func update_event(event):
+	if current_state:
+		current_state.update_event(event)
+
+func unhandled_event(event):
 	pass

@@ -1,7 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhdqyg0uua4m5"]
+[gd_scene load_steps=15 format=3 uid="uid://bhdqyg0uua4m5"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_75mts"]
 [ext_resource type="Texture2D" uid="uid://ujgn8iax6bw7" path="res://assets/sprites/player_tilesheet.png" id="1_jkns5"]
+[ext_resource type="Script" path="res://src/state_machine.gd" id="3_injmj"]
+[ext_resource type="Script" path="res://src/states/player_idle.gd" id="4_hst7v"]
+[ext_resource type="Script" path="res://src/states/player_jump.gd" id="5_evap7"]
+[ext_resource type="Script" path="res://src/states/player_walk.gd" id="6_i6pna"]
+[ext_resource type="Script" path="res://src/states/player_fall.gd" id="7_mw7fd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x84i2"]
 atlas = ExtResource("1_jkns5")
@@ -82,3 +87,25 @@ shape = SubResource("CapsuleShape2D_tjfg5")
 z_index = 3
 limit_left = 0
 limit_bottom = 1000
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_injmj")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
+script = ExtResource("4_hst7v")
+parent = NodePath("../..")
+animation_name = "default"
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("5_evap7")
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
+script = ExtResource("6_i6pna")
+parent = NodePath("../..")
+animation_name = "walk"
+
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
+script = ExtResource("7_mw7fd")
+parent = NodePath("../..")
+animation_name = "default"

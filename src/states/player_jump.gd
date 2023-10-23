@@ -1,17 +1,17 @@
 extends State
 class_name PlayerJump
 
+@export var parent : CharacterBody2D
+
 func enter():
-	animation_player.play(animation_name)
+	super()
 
 func exit():
-	animation_player.stop()
+	super()
 
-func update_event(event):
+func update_physics(delta : float):
 	pass
 
-func update_process(delta):
+func update_event(event : InputEvent):
 	pass
 
-func update_physics(delta):
-	pass
