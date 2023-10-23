@@ -7,7 +7,7 @@ func _ready():
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://temp.tscn")
+	get_tree().change_scene_to_file("res://levels/level1.tscn")
 
 
 func _on_options_pressed():

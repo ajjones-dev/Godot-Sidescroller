@@ -44,7 +44,7 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="PageTitle" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Credits"
@@ -52,19 +52,27 @@ label_settings = SubResource("LabelSettings_dnfku")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="Credits" type="Label" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+text = "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+Level & Game Design - AJ Jones
+
+Artwork and Sprites - https://www.kenney.nl/
+
+Audio - TBD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="Back" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_pp3t0")
 theme_override_font_sizes/font_size = 30
 text = "== Back =="
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
