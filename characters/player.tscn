@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bhdqyg0uua4m5"]
+[gd_scene load_steps=16 format=3 uid="uid://bhdqyg0uua4m5"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_75mts"]
 [ext_resource type="Texture2D" uid="uid://ujgn8iax6bw7" path="res://assets/sprites/player_tilesheet.png" id="1_jkns5"]
@@ -11,6 +11,10 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_x84i2"]
 atlas = ExtResource("1_jkns5")
 region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iikb"]
+atlas = ExtResource("1_jkns5")
+region = Rect2(160, 0, 80, 110)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hpa3n"]
 atlas = ExtResource("1_jkns5")
@@ -40,6 +44,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6iikb")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_hpa3n")
 }],
 "loop": true,
@@ -50,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o7dtu")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -77,7 +89,7 @@ script = ExtResource("1_75mts")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -55)
 sprite_frames = SubResource("SpriteFrames_fvi7u")
-frame_progress = 0.401336
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -43)
@@ -110,4 +122,4 @@ animation_name = "walk"
 [node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
 script = ExtResource("7_mw7fd")
 parent = NodePath("../..")
-animation_name = "default"
+animation_name = "fall"

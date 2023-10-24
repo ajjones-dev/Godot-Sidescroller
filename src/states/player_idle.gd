@@ -14,5 +14,5 @@ func update_physics(delta : float):
 func update_event(event : InputEvent):
 	if event.is_action_pressed("jump"):
 		ChangeState.emit(self, "jump")
-	if event.is_action_pressed("left") or event.is_action_pressed("right"):
+	elif event.is_action_pressed("left") or event.is_action_pressed("right"):
 		ChangeState.emit(self, "walk")
