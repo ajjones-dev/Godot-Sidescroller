@@ -2,7 +2,7 @@ extends Area2D
 class_name BronzeCoin
 
 @export var value : int = 1
-var bob_height : float = 5.0
+var bob_height : float = 15.0
 var bob_speed : float = 5.0
 
 @onready var start_y : float = global_position.y
