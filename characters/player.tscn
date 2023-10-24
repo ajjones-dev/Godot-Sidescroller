@@ -97,8 +97,10 @@ script = ExtResource("4_hst7v")
 parent = NodePath("../..")
 animation_name = "default"
 
-[node name="Jump" type="Node" parent="StateMachine"]
+[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
 script = ExtResource("5_evap7")
+parent = NodePath("../..")
+animation_name = "jump"
 
 [node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
 script = ExtResource("6_i6pna")
