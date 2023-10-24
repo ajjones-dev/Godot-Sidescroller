@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6fd2766lknge"]
+[gd_scene load_steps=12 format=3 uid="uid://c6fd2766lknge"]
 
 [ext_resource type="Texture2D" uid="uid://cybqnjgyp1c8c" path="res://assets/backgrounds/colored_grass.png" id="1_can74"]
 [ext_resource type="PackedScene" uid="uid://bhdqyg0uua4m5" path="res://characters/player.tscn" id="2_at8go"]
 [ext_resource type="Texture2D" uid="uid://dwmgo7ourdeqx" path="res://assets/backgrounds/sky_gradient.png" id="2_str36"]
 [ext_resource type="Texture2D" uid="uid://chru86mag6oxk" path="res://assets/backgrounds/ground_gradient.png" id="3_m82kt"]
 [ext_resource type="Texture2D" uid="uid://dh6lrbvol37cm" path="res://assets/tilesheets/spritesheet_ground.png" id="4_py0mx"]
+[ext_resource type="PackedScene" uid="uid://cshnb0gq655hi" path="res://characters/mouse.tscn" id="6_5kc2j"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ddodv"]
 tile_data = PackedInt32Array(65536, 2, 3, 1, 2, 3, 65537, 2, 9)
@@ -645,3 +646,7 @@ layer_0/tile_data = PackedInt32Array(196617, 2, 1, 196618, 2, 1, 196609, 2, 1, 1
 z_as_relative = false
 position = Vector2(113, 138)
 floor_max_angle = 0.965167
+
+[node name="Mouse" parent="." instance=ExtResource("6_5kc2j")]
+position = Vector2(2264, 344)
+move_direction = Vector2(-400, 0)

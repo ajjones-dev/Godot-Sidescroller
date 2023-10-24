@@ -34,8 +34,8 @@ func update_physics(delta):
 	
 	## Direction detection. Orients sprite depending on motion.
 	if parent.velocity.x >= 0:
-		animation_player.flip_h = false
-	else:
 		animation_player.flip_h = true
+	else:
+		animation_player.flip_h = false
 	
 	parent.move_and_slide()

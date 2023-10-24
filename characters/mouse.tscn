@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://cshnb0gq655hi"]
+
+[ext_resource type="Texture2D" uid="uid://t3a8ifswem48" path="res://assets/sprites/mouse.png" id="1_3dh8g"]
+[ext_resource type="Script" path="res://src/mouse.gd" id="1_3gspk"]
+[ext_resource type="Script" path="res://src/state_machine.gd" id="3_6xqms"]
+[ext_resource type="Script" path="res://src/states/enemy_idle.gd" id="4_wg8ge"]
+[ext_resource type="Script" path="res://src/states/enemy_walk.gd" id="5_2syfw"]
+[ext_resource type="Script" path="res://src/states/enemy_fall.gd" id="6_6apgs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v4g8"]
+atlas = ExtResource("1_3dh8g")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7f01"]
+atlas = ExtResource("1_3dh8g")
+region = Rect2(140, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqgfi"]
+atlas = ExtResource("1_3dh8g")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgq8v"]
+atlas = ExtResource("1_3dh8g")
+region = Rect2(70, 0, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7v6ni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v4g8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7f01")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_aqgfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgq8v")
+}],
+"loop": true,
+"name": &"wallk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u6b7"]
+size = Vector2(50, 25)
+
+[node name="Mouse" type="CharacterBody2D"]
+script = ExtResource("1_3gspk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -35)
+sprite_frames = SubResource("SpriteFrames_7v6ni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -12.5)
+shape = SubResource("RectangleShape2D_3u6b7")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_6xqms")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
+script = ExtResource("4_wg8ge")
+parent = NodePath("../..")
+animation_name = "default"
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
+script = ExtResource("5_2syfw")
+parent = NodePath("../..")
+animation_name = "walk"
+
+[node name="Hurt" type="Node" parent="StateMachine"]
+
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
+script = ExtResource("6_6apgs")
+parent = NodePath("../..")
+animation_name = "fall"
