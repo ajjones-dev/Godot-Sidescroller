@@ -68,7 +68,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kgq8v")
 }],
 "loop": true,
-"name": &"wallk",
+"name": &"walk",
 "speed": 3.0
 }]
 
@@ -81,7 +81,7 @@ script = ExtResource("1_3gspk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -35)
 sprite_frames = SubResource("SpriteFrames_7v6ni")
-animation = &"fall"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -12.5)
