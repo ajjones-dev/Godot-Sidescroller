@@ -10,6 +10,8 @@ func enter():
 func update_physics(delta : float):
 	if not parent.is_on_floor():
 		ChangeState.emit(self, "fall")
+	elif Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		ChangeState.emit(self, "walk")
 
 func update_event(event : InputEvent):
 	if event.is_action_pressed("jump"):
