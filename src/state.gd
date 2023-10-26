@@ -14,11 +14,11 @@ func enter():
 func exit():
 	animation_player.stop()
 
-func update_event(event):
+func update_event(_event):
 	pass
 
-func update_process(delta):
+func update_process(_delta):
 	pass
 
-func update_physics(delta):
+func update_physics(_delta):
 	pass
