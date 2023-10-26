@@ -13,6 +13,10 @@ func _ready():
 func _physics_process(delta):
 	state_machine.update_physics(delta)
 
+func create(x_movement : float, y_movement : float) -> CharacterBody2D:
+	move_direction = Vector2(x_movement, y_movement)
+	return self
+
 func die():
 	queue_free()
 

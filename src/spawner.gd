@@ -1,11 +1,18 @@
 extends Node2D
+class_name Spawner
 
+@export var enemy_type : Resource
+@export var x_movement : float
+@export var y_movement : float
 
-# Called when the node enters the scene tree for the first time.
+var spawned_enemies : Array
+var enemy
+
 func _ready():
-	pass # Replace with function body.
+	enemy = enemy_type.instantiate()
+	enemy.create(x_movement, y_movement)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_visible_on_screen_notifier_2d_screen_entered():
+	if spawned_enemies.size() == 0:
+		add_child(enemy)
+		spawned_enemies.append(enemy)
