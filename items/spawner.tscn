@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://chr362e7dx25n"]
+
+[ext_resource type="Script" path="res://src/spawner.gd" id="1_ldl0e"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_ldl0e")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1.14441e-05, -1.14441e-05)
+scale = Vector2(12.8, 12.8)
