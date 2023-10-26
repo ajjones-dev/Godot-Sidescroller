@@ -5,9 +5,15 @@ class_name StateMachine
 ##
 ## States are added as children nodes and gathered at runtime 
 ## allowing for reusable code between different character types.
+##
 
+## The starting state for the Character, usually some variation on Idle
 @export var initial_state : State
+
+## Current state, tracked to make sure Change State is called only by active state.
 var current_state : State
+
+## A Dictionary States where the key is lowercase of the Node's State name
 var states : Dictionary = {}
 
 
