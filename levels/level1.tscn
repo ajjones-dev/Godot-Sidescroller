@@ -660,7 +660,7 @@ position = Vector2(1432, 136)
 
 [node name="EnemySpawns" type="Node" parent="."]
 
-[node name="Spawner" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
+[node name="Spawner" parent="EnemySpawns" node_paths=PackedStringArray("enemy_type") instance=ExtResource("8_mehhp")]
 position = Vector2(1680, 192)
-enemy_type = ExtResource("6_5kc2j")
+enemy_type = NodePath("../../Mouse")
 x_movement = -100.0

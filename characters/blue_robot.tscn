@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://capmsshuwpy7k"]
 
-[ext_resource type="Script" path="res://src/blue_robot.gd" id="1_jpkjn"]
+[ext_resource type="Script" path="res://src/characters/blue_robot.gd" id="1_jpkjn"]
 [ext_resource type="Texture2D" uid="uid://blyr6w4tjs7dd" path="res://assets/sprites/robot_blueDrive1.png" id="1_ln0wb"]
 [ext_resource type="Texture2D" uid="uid://dlsscqgeh7apc" path="res://assets/sprites/robot_blueDamage1.png" id="2_1r41g"]
 [ext_resource type="Texture2D" uid="uid://devqb1ly76o3x" path="res://assets/sprites/robot_blueDamage2.png" id="3_dyp3k"]

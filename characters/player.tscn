@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bhdqyg0uua4m5"]
 
-[ext_resource type="Script" path="res://src/player.gd" id="1_75mts"]
+[ext_resource type="Script" path="res://src/characters/player.gd" id="1_aqyyg"]
 [ext_resource type="Texture2D" uid="uid://ujgn8iax6bw7" path="res://assets/sprites/player_tilesheet.png" id="1_jkns5"]
 [ext_resource type="Script" path="res://src/state_machine.gd" id="3_injmj"]
 [ext_resource type="Script" path="res://src/states/player_idle.gd" id="4_hst7v"]
@@ -84,7 +84,7 @@ height = 86.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 floor_stop_on_slope = false
-script = ExtResource("1_75mts")
+script = ExtResource("1_aqyyg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -55)

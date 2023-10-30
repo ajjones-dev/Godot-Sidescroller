@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3t783ssx7x7v"]
 
-[ext_resource type="Script" path="res://src/bronze_coin.gd" id="1_8x7q1"]
+[ext_resource type="Script" path="res://src/items/bronze_coin.gd" id="1_wjtfs"]
 [ext_resource type="Texture2D" uid="uid://bmihptw0ha7fe" path="res://assets/sprites/coinBronze.png" id="2_ay6eo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_solno"]
 radius = 24.0
 
 [node name="BronzeCoin" type="Area2D"]
-script = ExtResource("1_8x7q1")
+script = ExtResource("1_wjtfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -16)

@@ -9,6 +9,9 @@ const SPEED = 300.0
 const JUMP_VELOCITY = 600.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+# Placeholder score, should move to UI Manager when completed testing
+var score : int = 0
+
 @onready var state_machine : StateMachine = $StateMachine
 
 # Initialize State Machine to handle different player states and abilities
@@ -29,3 +32,6 @@ func _input(event : InputEvent) -> void:
 # Removes errors from unmapped events with empty function
 func _unhandled_input(event : InputEvent) -> void:
 	state_machine.unhandled_event(event)
+
+func add_score(value : int) -> void:
+	score += value

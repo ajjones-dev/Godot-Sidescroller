@@ -7,6 +7,9 @@ var starting_position : Vector2 = Vector2()
 @export var move_direction: Vector2 = Vector2()
 var target_position : Vector2 = Vector2()
 
+func _init(x_direction : float, y_direction : float):
+	move_direction = Vector2(x_direction, y_direction)
+
 func _ready():
 	state_machine.init(self)
 
