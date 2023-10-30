@@ -22,7 +22,10 @@ func update_physics(delta : float):
 		animation_player.flip_h = true
 	elif direction > 0:
 		animation_player.flip_h = false
-
+	
+	if parent.velocity.x == 0:
+		ChangeState.emit(self, "idle")
+	
 	parent.move_and_slide()
 
 func update_event(event : InputEvent):

@@ -10,7 +10,6 @@ var enemy
 
 func _ready():
 	enemy = enemy_type.instantiate()
-	enemy.create(x_movement, y_movement)
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
 	if spawned_enemies.size() == 0:
