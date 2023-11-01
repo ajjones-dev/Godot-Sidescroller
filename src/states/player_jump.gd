@@ -12,6 +12,16 @@ func update_physics(delta : float):
 	
 	if parent.velocity.y > 0:
 		ChangeState.emit(self, "fall")
+	
+	var direction = Input.get_axis("left", "right")
+	if direction:
+		parent.velocity.x = direction * parent.SPEED
+	
+	if direction < 0:
+		animation_player.flip_h = true
+	elif direction > 0:
+		animation_player.flip_h = false
+		
 	parent.move_and_slide()
 
 func update_event(event : InputEvent):
