@@ -21,3 +21,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func create(spawned_direction : Vector2) -> void:
 	move_direction = spawned_direction
+	starting_position = global_position
