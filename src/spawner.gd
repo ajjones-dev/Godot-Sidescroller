@@ -9,9 +9,12 @@ var spawned_enemies : Array
 var enemy
 
 func _ready():
-	enemy = enemy_type.instantiate()
+	pass
 
 func _on_visible_on_screen_notifier_2d_screen_entered():
-	if spawned_enemies.size() == 0:
+	enemy = enemy_type.instantiate()
+	enemy.create(Vector2(enemy.position.x - x_movement, enemy.position.y - y_movement))
+	var number_of_spawns = get_child_count()
+	if number_of_spawns < 2:
 		add_child(enemy)
 		spawned_enemies.append(enemy)

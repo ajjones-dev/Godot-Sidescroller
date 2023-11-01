@@ -649,10 +649,6 @@ z_as_relative = false
 position = Vector2(113, 138)
 floor_max_angle = 0.965167
 
-[node name="Mouse" parent="." instance=ExtResource("6_5kc2j")]
-position = Vector2(2264, 344)
-move_direction = Vector2(-400, 0)
-
 [node name="Collectibles" type="Node" parent="."]
 
 [node name="BronzeCoin" parent="Collectibles" instance=ExtResource("7_ulpxl")]
