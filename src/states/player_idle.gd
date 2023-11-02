@@ -5,6 +5,9 @@ class_name PlayerIdle
 
 func enter():
 	parent.velocity.x = 0
+	if parent.is_on_floor():
+		parent.jump_count = 0
+		parent.has_double_jumped = false
 	super()
 
 func update_physics(delta : float):

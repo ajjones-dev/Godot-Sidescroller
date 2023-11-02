@@ -4,6 +4,9 @@ class_name PlayerWalk
 @export var parent : CharacterBody2D
 
 func enter():
+	if parent.is_on_floor():
+		parent.jump_count = 0
+		parent.has_double_jumped = false
 	super()
 
 func exit():
@@ -12,6 +15,7 @@ func exit():
 func update_physics(delta : float):
 	parent.velocity.x = 0
 	if not parent.is_on_floor():
+		parent.jump_count += 1
 		ChangeState.emit(self, "fall")
 
 	var direction = Input.get_axis("left", "right")

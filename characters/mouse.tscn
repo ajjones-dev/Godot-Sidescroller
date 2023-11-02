@@ -77,7 +77,7 @@ size = Vector2(50, 25)
 
 [node name="Mouse" type="CharacterBody2D"]
 script = ExtResource("1_qrvo3")
-move_direction = Vector2(100, 0)
+move_direction = Vector2(-5, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -35)

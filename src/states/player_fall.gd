@@ -18,6 +18,11 @@ func update_physics(delta):
 		animation_player.flip_h = true
 	elif direction > 0:
 		animation_player.flip_h = false
+	
+	if Input.is_action_just_pressed("jump") and parent.jump_count <= parent.max_jump and not parent.has_double_jumped:
+		parent.velocity.y = 0
+		parent.has_double_jumped = true
+		ChangeState.emit(self, "jump")
 
 func update_event(event : InputEvent):
 	if event.is_action_pressed("left") or event.is_action_pressed("right"):

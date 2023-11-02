@@ -7,6 +7,9 @@ class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = 600.0
+var jump_count : int
+var max_jump : int = 2
+var has_double_jumped : bool
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Placeholder score, should move to UI Manager when completed testing
@@ -16,6 +19,8 @@ var score : int = 0
 
 # Initialize State Machine to handle different player states and abilities
 func _ready():
+	jump_count = 0
+	has_double_jumped = false
 	state_machine.init(self)
 
 
