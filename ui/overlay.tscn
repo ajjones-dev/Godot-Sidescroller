@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4tdkcuy6igec"]
+
+[ext_resource type="Texture2D" uid="uid://bute0nax5rf8x" path="res://assets/ui/ui_sprites.tres" id="1_rbljw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74ncq"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(22, 534, 86, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq7nc"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 804, 54, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl6x2"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 676, 47, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8fve"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 549, 57, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1de3f"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 420, 51, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y31j"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 291, 52, 69)
+
+[node name="Overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 235.0
+offset_bottom = 64.0
+
+[node name="Coin" type="TextureRect" parent="ScoreContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_74ncq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TenThousand" type="TextureRect" parent="ScoreContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_oq7nc")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Thousand" type="TextureRect" parent="ScoreContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_hl6x2")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Hundred" type="TextureRect" parent="ScoreContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_c8fve")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Ten" type="TextureRect" parent="ScoreContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_1de3f")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="One" type="TextureRect" parent="ScoreContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_1y31j")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TimeContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 64.0
+
+[node name="HealthContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -64.0
+offset_right = 192.0
+offset_bottom = -16.0
+grow_vertical = 0
