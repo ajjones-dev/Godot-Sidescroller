@@ -6,6 +6,8 @@ class_name Mouse
 var starting_position : Vector2 = Vector2()
 @export var move_direction: Vector2 = Vector2()
 var target_position : Vector2 = Vector2()
+var not_on_wall : bool = true
+var just_spawned : bool = true
 
 func _ready():
 	if not move_direction:

@@ -18,23 +18,28 @@ func enter():
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-func update_physics(delta):
-	parent.velocity = parent.position.direction_to(parent.target_position) * parent.speed
+func update_physics(delta):	
+	parent.velocity = parent.global_position.direction_to(parent.target_position) * parent.speed
 	
 	# Fall detection. Switches to Fall State if not touching the floor.
 	if not parent.is_on_floor():
 		ChangeState.emit(self, "fall")
 	
 	# Wall detection. Resets target position if enemy hits wall.
-	if parent.is_on_wall():
-		if animation_player.flip_h:
-			parent.target_position = parent.position + parent.move_direction
+	if parent.is_on_wall() and parent.not_on_wall:
+		parent.not_on_wall = false
+		if parent.target_position.x - parent.global_position.x > 0:
+			parent.target_position = parent.global_position + parent.move_direction
 		else:
-			parent.target_position = parent.position - parent.move_direction
+			parent.target_position = parent.global_position - parent.move_direction
+	
+	# Reset wall detection after wall collision.
+	if not parent.is_on_wall() and not parent.not_on_wall:
+		parent.not_on_wall = true
 	
 	# Reached destination. Checks if target has reached destination and flips target.
-	if parent.position.distance_to(parent.target_position) <= 1:
-		if parent.position.distance_to(parent.starting_position) <= 1:
+	if parent.global_position.distance_to(parent.target_position) <= 1:
+		if parent.global_position.distance_to(parent.starting_position) <= 1:
 			parent.target_position = parent.starting_position + parent.move_direction
 		else:
 			parent.target_position = parent.starting_position
