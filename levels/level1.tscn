@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6fd2766lknge"]
+[gd_scene load_steps=16 format=3 uid="uid://c6fd2766lknge"]
 
 [ext_resource type="Texture2D" uid="uid://cybqnjgyp1c8c" path="res://assets/backgrounds/colored_grass.png" id="1_can74"]
 [ext_resource type="PackedScene" uid="uid://bhdqyg0uua4m5" path="res://characters/player.tscn" id="2_at8go"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3t783ssx7x7v" path="res://items/bronze_coin.tscn" id="7_ulpxl"]
 [ext_resource type="PackedScene" uid="uid://chr362e7dx25n" path="res://items/spawner.tscn" id="8_mehhp"]
 [ext_resource type="PackedScene" uid="uid://bcbhpucd2cwsh" path="res://items/finish_flag.tscn" id="9_241f6"]
+[ext_resource type="PackedScene" uid="uid://c4tdkcuy6igec" path="res://ui/overlay.tscn" id="10_c6r7n"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ddodv"]
 tile_data = PackedInt32Array(65536, 2, 3, 1, 2, 3, 65537, 2, 9)
@@ -718,3 +719,7 @@ x_movement = -350.0
 [node name="FinishFlag" parent="." instance=ExtResource("9_241f6")]
 position = Vector2(9664, 488)
 next_scene = "res://ui/main_menu.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Overlay" parent="CanvasLayer" instance=ExtResource("10_c6r7n")]
