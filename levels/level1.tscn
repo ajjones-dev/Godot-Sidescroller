@@ -622,19 +622,37 @@ z_as_relative = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.25, 0.25)
-motion_mirroring = Vector2(1024, 0)
+motion_mirroring = Vector2(2048, 0)
 
 [node name="ColoredGrass" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(392, 0)
+position = Vector2(-120, -512)
 texture = ExtResource("1_can74")
+centered = false
+
+[node name="ColoredGrass2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, -512)
+texture = ExtResource("1_can74")
+centered = false
 
 [node name="SkyGradient" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(392, -1024)
+position = Vector2(-120, -1536)
 texture = ExtResource("2_str36")
+centered = false
+
+[node name="SkyGradient2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, -1536)
+texture = ExtResource("2_str36")
+centered = false
 
 [node name="GroundGradient" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(392, 1024)
+position = Vector2(-120, 512)
 texture = ExtResource("3_m82kt")
+centered = false
+
+[node name="GroundGradient2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, 512)
+texture = ExtResource("3_m82kt")
+centered = false
 
 [node name="BackgroundObjects" type="TileMap" parent="."]
 format = 2
