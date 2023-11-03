@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4tdkcuy6igec"]
+[gd_scene load_steps=15 format=3 uid="uid://c4tdkcuy6igec"]
 
 [ext_resource type="Texture2D" uid="uid://bute0nax5rf8x" path="res://assets/ui/ui_sprites.tres" id="1_rbljw"]
 
@@ -25,6 +25,34 @@ region = Rect2(164, 420, 51, 69)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y31j"]
 atlas = ExtResource("1_rbljw")
 region = Rect2(164, 291, 52, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkee7"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 676, 47, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1pp1"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 549, 57, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72vdx"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 420, 51, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b12md"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(15, 283, 95, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wema"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 938, 53, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyxl5"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 804, 54, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu88v"]
+atlas = ExtResource("1_rbljw")
+region = Rect2(164, 676, 47, 67)
 
 [node name="Overlay" type="Control"]
 layout_mode = 3
@@ -79,10 +107,28 @@ stretch_mode = 4
 
 [node name="TimeContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 936.0
+offset_left = 1024.0
 offset_top = 24.0
 offset_right = 1128.0
 offset_bottom = 64.0
+
+[node name="Hundred" type="TextureRect" parent="TimeContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dkee7")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Ten" type="TextureRect" parent="TimeContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_j1pp1")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="One" type="TextureRect" parent="TimeContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_72vdx")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="HealthContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -90,7 +136,31 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
-offset_top = -64.0
-offset_right = 192.0
+offset_top = -40.0
+offset_right = 128.0
 offset_bottom = -16.0
 grow_vertical = 0
+
+[node name="Heart" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_b12md")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="X" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_5wema")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Ten" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_hyxl5")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="One" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_wu88v")
+expand_mode = 3
+stretch_mode = 4
