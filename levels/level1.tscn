@@ -678,7 +678,42 @@ position = Vector2(1432, 136)
 [node name="Spawner" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
 position = Vector2(1584, 208)
 enemy_type = ExtResource("6_5kc2j")
-x_movement = -100.0
+x_movement = -400.0
+
+[node name="Spawner2" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
+position = Vector2(2240, 344)
+enemy_type = ExtResource("6_5kc2j")
+x_movement = -500.0
+
+[node name="Spawner3" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
+position = Vector2(3096, -80)
+enemy_type = ExtResource("6_5kc2j")
+x_movement = -350.0
+
+[node name="Spawner4" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
+position = Vector2(4168, 344)
+enemy_type = ExtResource("6_5kc2j")
+x_movement = -400.0
+
+[node name="Spawner5" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
+position = Vector2(5128, 128)
+enemy_type = ExtResource("6_5kc2j")
+x_movement = -350.0
+
+[node name="Spawner6" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
+position = Vector2(4624, 120)
+enemy_type = ExtResource("6_5kc2j")
+x_movement = 350.0
+
+[node name="Spawner7" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
+position = Vector2(6744, 448)
+enemy_type = ExtResource("6_5kc2j")
+x_movement = 350.0
+
+[node name="Spawner8" parent="EnemySpawns" instance=ExtResource("8_mehhp")]
+position = Vector2(7432, 432)
+enemy_type = ExtResource("6_5kc2j")
+x_movement = -350.0
 
 [node name="FinishFlag" parent="." instance=ExtResource("9_241f6")]
 position = Vector2(9664, 488)
