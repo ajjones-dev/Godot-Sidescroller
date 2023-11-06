@@ -13,7 +13,7 @@ var player_lives : int
 
 ## Level design
 var time_remaining : float
-
+@export_file("*.tscn") var next_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,7 +43,26 @@ func add_score(value : int):
 	update_score()
 
 
-## Updates score UI element
+## Updates Score UI element
 func update_score():
 	# TODO: Do some stuff here, sprites can be hard
 	pass
+
+
+## Updates Level Time Remaining UI element
+func update_time():
+	# TODO: More stuff to do/figure out
+	# Round down float time remaining to update sprites
+	pass
+
+
+## Updates Player Lives Count
+func update_lives():
+	# TODO: Total lives update on screen
+	# Called on player death or pickup of life item
+	pass
+
+
+## Transitions Screen to Game Over Screen, Updates Score
+func game_over():
+	get_tree().change_scene_to_file(next_scene)
