@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4tdkcuy6igec"]
+[gd_scene load_steps=16 format=3 uid="uid://c4tdkcuy6igec"]
 
+[ext_resource type="Script" path="res://src/ui/overlay.gd" id="1_pij1q"]
 [ext_resource type="Texture2D" uid="uid://bute0nax5rf8x" path="res://assets/ui/ui_sprites.tres" id="1_rbljw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74ncq"]
@@ -61,6 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pij1q")
 
 [node name="ScoreContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
