@@ -19,7 +19,7 @@ func update_physics(delta):
 	elif direction > 0:
 		animation_player.flip_h = false
 	
-	if Input.is_action_just_pressed("jump") and parent.jump_count <= parent.max_jump and not parent.has_double_jumped:
+	if Input.is_action_just_pressed("jump") and parent.jump_count <= parent.MAX_JUMP and not parent.has_double_jumped:
 		parent.velocity.y = 0
 		parent.has_double_jumped = true
 		ChangeState.emit(self, "jump")

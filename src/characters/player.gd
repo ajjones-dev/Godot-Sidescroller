@@ -5,38 +5,44 @@ class_name Player
 ## All actions are passed through to a [StateMachine] to handle
 ## animations and physics updates.
 
-const SPEED = 300.0
-const JUMP_VELOCITY = 600.0
-var jump_count : int
-var max_jump : int = 2
-var has_double_jumped : bool
+## User physics specific variables
+const SPEED : float = 300.0
+const JUMP_VELOCITY : float = 600.0
+const MAX_JUMP : int = 2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-# Placeholder score, should move to UI Manager when completed testing
-var score : int = 0
+## Tracking Double Jump status
+var jump_count : int
+var has_double_jumped : bool
 
+## Nodes used in tracking player and game state
 @onready var state_machine : StateMachine = $StateMachine
+var overlay : Overlay
 
-# Initialize State Machine to handle different player states and abilities
+
+## Initialize State Machine to handle different player states and abilities
 func _ready():
+	overlay = get_node("../CanvasLayer/Overlay")
 	jump_count = 0
 	has_double_jumped = false
 	state_machine.init(self)
 
 
-# Hands off delta to state machine to update player's physics
+## Hands off delta to state machine to update player's physics
 func _physics_process(delta : float) -> void:
 	state_machine.update_physics(delta)
 
 
-# Takes in mapped inputs in order to change to appropriate state
+## Takes in mapped inputs in order to change to appropriate state
 func _input(event : InputEvent) -> void:
 	state_machine.update_event(event)
 
 
-# Removes errors from unmapped events with empty function
+## Removes errors from unmapped events with empty function
 func _unhandled_input(event : InputEvent) -> void:
 	state_machine.unhandled_event(event)
 
+
+## Takes enemy score from body_entered signal
 func add_score(value : int) -> void:
-	score += value
+	overlay.add_score(value)

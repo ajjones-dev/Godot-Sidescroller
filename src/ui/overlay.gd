@@ -9,7 +9,7 @@ class_name Overlay
 ## Player Specific Values
 var player_score : int
 var player_lives : int
-
+@onready var player : CharacterBody2D = get_node("res://Main/Player")
 
 ## Level design
 var time_remaining : float
@@ -22,7 +22,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	time_remaining -= delta
+	if time_remaining <= 0:
+		player.die()
 
 
 ## Called to set level values when player starts

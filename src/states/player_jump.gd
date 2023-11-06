@@ -23,7 +23,7 @@ func update_physics(delta : float):
 	elif direction > 0:
 		animation_player.flip_h = false
 	
-	if Input.is_action_just_pressed("jump") and parent.jump_count <= parent.max_jump and not parent.has_double_jumped and not parent.is_on_floor():
+	if Input.is_action_just_pressed("jump") and parent.jump_count <= parent.MAX_JUMP and not parent.has_double_jumped and not parent.is_on_floor():
 		parent.jump_count += 1
 		parent.velocity.y -= parent.JUMP_VELOCITY / 2
 		parent.has_double_jumped = true
