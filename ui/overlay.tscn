@@ -7,9 +7,7 @@
 atlas = ExtResource("1_rbljw")
 region = Rect2(22, 534, 86, 86)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oq7nc"]
-atlas = ExtResource("1_rbljw")
-region = Rect2(164, 804, 54, 69)
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ij6ka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl6x2"]
 atlas = ExtResource("1_rbljw")
@@ -63,6 +61,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pij1q")
+next_scene = "res://ui/main_menu.tscn"
 
 [node name="ScoreContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -79,7 +78,7 @@ stretch_mode = 4
 
 [node name="TenThousand" type="TextureRect" parent="ScoreContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_oq7nc")
+texture = SubResource("AnimatedTexture_ij6ka")
 expand_mode = 3
 stretch_mode = 4
 
