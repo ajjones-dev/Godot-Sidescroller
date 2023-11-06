@@ -9,10 +9,10 @@ class_name Overlay
 ## Player Specific Values
 var player_score : int
 var player_lives : int
-@onready var player : CharacterBody2D = get_node("res://Main/Player")
+@onready var player : CharacterBody2D = get_node("../../Player")
 
 ## Level design
-var time_remaining : float
+var time_remaining : float = 300.0
 @export_file("*.tscn") var next_scene
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +24,7 @@ func _ready():
 func _process(delta):
 	time_remaining -= delta
 	if time_remaining <= 0:
-		player.die()
+		life_adjustment(-1)
 
 
 ## Called to set level values when player starts
@@ -40,24 +40,33 @@ func level_complete():
 ## Adds score if player defeats and enemy
 func add_score(value : int):
 	player_score += value
-	update_score()
+	update_score_ui()
+
+
+## Updates player lives count based on damage from enemy or pickup
+func life_adjustment(value : int):
+	player_lives += value
+	update_lives_ui()
+	
+	if player_lives <= 0:
+		game_over()
 
 
 ## Updates Score UI element
-func update_score():
+func update_score_ui():
 	# TODO: Do some stuff here, sprites can be hard
 	pass
 
 
 ## Updates Level Time Remaining UI element
-func update_time():
+func update_time_ui():
 	# TODO: More stuff to do/figure out
 	# Round down float time remaining to update sprites
 	pass
 
 
 ## Updates Player Lives Count
-func update_lives():
+func update_lives_ui():
 	# TODO: Total lives update on screen
 	# Called on player death or pickup of life item
 	pass
