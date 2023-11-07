@@ -20,18 +20,20 @@ var player_lives : int = 3
 var time_remaining : float = 300.0
 @export_file("*.tscn") var next_scene
 
-# Called when the node enters the scene tree for the first time.
+## Called when the node enters the scene tree for the first time.
 func _ready():
 	update_lives_ui()
 	update_score_ui()
 	update_time_ui()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time_remaining -= delta
+	
 	if time_remaining <= 0:
 		life_adjustment(-1)
+	
 	update_time_ui()
 
 
@@ -64,8 +66,10 @@ func life_adjustment(value : int):
 func update_score_ui():
 	var score_length = str(player_score).length()
 	var ui_score_text = str(player_score)
+	
 	for n in range(score_length, 8):
 		ui_score_text = str("0", ui_score_text)
+	
 	score_label.text = ui_score_text
 
 
@@ -73,16 +77,20 @@ func update_score_ui():
 func update_time_ui():
 	var time_length = str(int(time_remaining)).length()
 	var ui_time_text = str(int(time_remaining))
+	
 	for n in range(time_length, 3):
 		ui_time_text = str("0", ui_time_text)
+	
 	time_label.text = ui_time_text
 
 
 ## Updates Player Lives Count
 func update_lives_ui():
 	var ui_lives_text = str(player_lives)
+	
 	if ui_lives_text.length() < 2:
 		ui_lives_text = str("0", ui_lives_text)
+	
 	health_label.text = ui_lives_text
 
 

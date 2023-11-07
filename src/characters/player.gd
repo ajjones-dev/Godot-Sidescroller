@@ -46,3 +46,8 @@ func _unhandled_input(event : InputEvent) -> void:
 ## Takes enemy score from body_entered signal
 func add_score(value : int) -> void:
 	overlay.add_score(value)
+
+
+## When colliding with the damage end of an enemy
+func take_damage():
+	overlay.life_adjustment(-1)

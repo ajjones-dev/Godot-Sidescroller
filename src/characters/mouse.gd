@@ -10,6 +10,8 @@ class_name Mouse
 ## Mouse Variables
 const SPEED : float = 90.0
 var value : int = 5
+var damage_timer : float = 0.0
+var damage_speed : float = 2.0
 
 ## Scene Variables
 var starting_position : Vector2 = Vector2()
@@ -21,16 +23,20 @@ var not_on_wall : bool = true
 @onready var state_machine : StateMachine = $StateMachine
 @onready var hurt_vector : RayCast2D = get_node("HurtVector")
 
+
 ## Called at start, initializes State Machine
 func _ready():
 	state_machine.init(self)
 
 
 ## Passes Delta to State Machine for Process
-## Checks for collision with hurt vector
+## Checks for player collision with hurt vector
 func _physics_process(delta):
-	if hurt_vector.is_colliding() and hurt_vector.get_collider().has_method("take_damage"):
+	if hurt_vector.is_colliding() and hurt_vector.get_collider().has_method("take_damage") and damage_timer > damage_speed:
 		hurt_vector.get_collider().take_damage()
+		damage_timer = 0.0
+	
+	damage_timer += delta
 	
 	state_machine.update_physics(delta)
 
