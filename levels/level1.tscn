@@ -867,7 +867,7 @@ x_movement = -350.0
 
 [node name="FinishFlag" parent="." instance=ExtResource("9_241f6")]
 position = Vector2(9664, 488)
-next_scene = "res://ui/main_menu.tscn"
+next_scene = "res://ui/level_transition.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

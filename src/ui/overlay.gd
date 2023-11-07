@@ -7,8 +7,6 @@ class_name Overlay
 ##
 
 ## Player Specific Values
-var player_score : int = 10
-var player_lives : int = 3
 @onready var player : CharacterBody2D = get_node("../../Player")
 
 ## UI Nodes
@@ -19,12 +17,14 @@ var player_lives : int = 3
 ## Level design
 var time_remaining : float = 300.0
 @export_file("*.tscn") var next_scene
+@onready var goal : Area2D = get_node("../../FinishFlag")
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
 	update_lives_ui()
 	update_score_ui()
 	update_time_ui()
+	goal.connect("LevelCompleted", level_complete)
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,28 +44,28 @@ func start_level(level_time : float):
 
 ## Called when level is complete to adjust score
 func level_complete():
-	player_score += int(time_remaining)
+	PlayerVariables.player_score += int(time_remaining)
 	
 
 ## Adds score if player defeats and enemy
 func add_score(value : int):
-	player_score += value
+	PlayerVariables.player_score += value
 	update_score_ui()
 
 
 ## Updates player lives count based on damage from enemy or pickup
 func life_adjustment(value : int):
-	player_lives += value
+	PlayerVariables.player_lives += value
 	update_lives_ui()
 	
-	if player_lives <= 0:
+	if PlayerVariables.player_lives <= 0:
 		game_over()
 
 
 ## Updates Score UI element
 func update_score_ui():
-	var score_length = str(player_score).length()
-	var ui_score_text = str(player_score)
+	var score_length = str(PlayerVariables.player_score).length()
+	var ui_score_text = str(PlayerVariables.player_score)
 	
 	for n in range(score_length, 8):
 		ui_score_text = str("0", ui_score_text)
@@ -86,7 +86,7 @@ func update_time_ui():
 
 ## Updates Player Lives Count
 func update_lives_ui():
-	var ui_lives_text = str(player_lives)
+	var ui_lives_text = str(PlayerVariables.player_lives)
 	
 	if ui_lives_text.length() < 2:
 		ui_lives_text = str("0", ui_lives_text)

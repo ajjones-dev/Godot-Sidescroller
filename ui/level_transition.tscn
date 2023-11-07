@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhc2oigi0us1t"]
+
+[ext_resource type="Script" path="res://src/ui/level_transition.gd" id="1_48syw"]
+[ext_resource type="SystemFont" uid="uid://gica1mi5ghv5" path="res://assets/ui/impact_font.tres" id="2_d8gyq"]
+[ext_resource type="Texture2D" uid="uid://bute0nax5rf8x" path="res://assets/ui/ui_sprites.tres" id="3_s8th4"]
+[ext_resource type="FontFile" uid="uid://cpmavn088uxrw" path="res://assets/ui/PressStart2P-Regular.ttf" id="4_e1ds1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_88gdl"]
+font = ExtResource("2_d8gyq")
+font_size = 64
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5ue0"]
+atlas = ExtResource("3_s8th4")
+region = Rect2(15, 283, 95, 83)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qouxw"]
+font = ExtResource("4_e1ds1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_43lw3"]
+font = ExtResource("4_e1ds1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjvtp"]
+atlas = ExtResource("3_s8th4")
+region = Rect2(22, 534, 86, 86)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3hijg"]
+font = ExtResource("4_e1ds1")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48syw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 192.0
+offset_right = 702.0
+offset_bottom = 358.0
+
+[node name="Level Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Level 0"
+label_settings = SubResource("LabelSettings_88gdl")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Heart" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_l5ue0")
+expand_mode = 2
+
+[node name="X" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "x"
+label_settings = SubResource("LabelSettings_qouxw")
+
+[node name="Lives" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "01"
+label_settings = SubResource("LabelSettings_43lw3")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Coin" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qjvtp")
+expand_mode = 2
+
+[node name="Score" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "000000"
+label_settings = SubResource("LabelSettings_3hijg")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Prompt" type="Label" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "Press Any Key/Button to Continue"
