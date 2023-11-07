@@ -1,13 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4tdkcuy6igec"]
+[gd_scene load_steps=17 format=3 uid="uid://c4tdkcuy6igec"]
 
 [ext_resource type="Script" path="res://src/ui/overlay.gd" id="1_pij1q"]
 [ext_resource type="Texture2D" uid="uid://bute0nax5rf8x" path="res://assets/ui/ui_sprites.tres" id="1_rbljw"]
+[ext_resource type="Texture2D" uid="uid://dt36s3e31jqxb" path="res://assets/ui/number_spritesheet.png" id="3_m1co4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74ncq"]
 atlas = ExtResource("1_rbljw")
 region = Rect2(22, 534, 86, 86)
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_ij6ka"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4teg"]
+atlas = ExtResource("3_m1co4")
+region = Rect2(6, 2, 54, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl6x2"]
 atlas = ExtResource("1_rbljw")
@@ -78,7 +81,7 @@ stretch_mode = 4
 
 [node name="TenThousand" type="TextureRect" parent="ScoreContainer"]
 layout_mode = 2
-texture = SubResource("AnimatedTexture_ij6ka")
+texture = SubResource("AtlasTexture_w4teg")
 expand_mode = 3
 stretch_mode = 4
 
