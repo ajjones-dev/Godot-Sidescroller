@@ -7,9 +7,14 @@ class_name Overlay
 ##
 
 ## Player Specific Values
-var player_score : int
-var player_lives : int
+var player_score : int = 10
+var player_lives : int = 3
 @onready var player : CharacterBody2D = get_node("../../Player")
+
+## UI Nodes
+@onready var score_label : Label = get_node("ScoreContainer/Score")
+@onready var time_label : Label = get_node("TimeContainer/Time")
+@onready var health_label : Label = get_node("HealthContainer/Health")
 
 ## Level design
 var time_remaining : float = 300.0
@@ -17,7 +22,9 @@ var time_remaining : float = 300.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	update_lives_ui()
+	update_score_ui()
+	update_time_ui()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +32,7 @@ func _process(delta):
 	time_remaining -= delta
 	if time_remaining <= 0:
 		life_adjustment(-1)
+	update_time_ui()
 
 
 ## Called to set level values when player starts
@@ -54,22 +62,28 @@ func life_adjustment(value : int):
 
 ## Updates Score UI element
 func update_score_ui():
-	# TODO: Do some stuff here, sprites can be hard
-	pass
+	var score_length = str(player_score).length()
+	var ui_score_text = str(player_score)
+	for n in range(score_length, 8):
+		ui_score_text = str("0", ui_score_text)
+	score_label.text = ui_score_text
 
 
 ## Updates Level Time Remaining UI element
 func update_time_ui():
-	# TODO: More stuff to do/figure out
-	# Round down float time remaining to update sprites
-	pass
+	var time_length = str(int(time_remaining)).length()
+	var ui_time_text = str(int(time_remaining))
+	for n in range(time_length, 3):
+		ui_time_text = str("0", ui_time_text)
+	time_label.text = ui_time_text
 
 
 ## Updates Player Lives Count
 func update_lives_ui():
-	# TODO: Total lives update on screen
-	# Called on player death or pickup of life item
-	pass
+	var ui_lives_text = str(player_lives)
+	if ui_lives_text.length() < 2:
+		ui_lives_text = str("0", ui_lives_text)
+	health_label.text = ui_lives_text
 
 
 ## Transitions Screen to Game Over Screen, Updates Score
