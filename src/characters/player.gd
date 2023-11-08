@@ -58,4 +58,7 @@ func take_damage():
 ## Called when falling off a level
 func die():
 	overlay.life_adjustment(-1)
-	get_tree().change_scene_to_file("res://ui/level_transition.tscn")
+	if PlayerVariables.player_lives >= 0:
+		get_tree().change_scene_to_file("res://ui/level_transition.tscn")
+	else:
+		overlay.game_over()

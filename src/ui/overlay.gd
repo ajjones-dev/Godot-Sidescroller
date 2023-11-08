@@ -57,9 +57,6 @@ func add_score(value : int):
 func life_adjustment(value : int):
 	PlayerVariables.player_lives += value
 	update_lives_ui()
-	
-	if PlayerVariables.player_lives <= 0:
-		game_over()
 
 
 ## Updates Score UI element
