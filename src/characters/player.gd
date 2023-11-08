@@ -30,6 +30,8 @@ func _ready():
 
 ## Hands off delta to state machine to update player's physics
 func _physics_process(delta : float) -> void:
+	if global_position.y > 1000:
+		die()
 	state_machine.update_physics(delta)
 
 
@@ -51,3 +53,9 @@ func add_score(value : int) -> void:
 ## When colliding with the damage end of an enemy
 func take_damage():
 	overlay.life_adjustment(-1)
+
+
+## Called when falling off a level
+func die():
+	overlay.life_adjustment(-1)
+	get_tree().change_scene_to_file("res://ui/level_transition.tscn")

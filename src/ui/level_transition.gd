@@ -16,4 +16,4 @@ func _ready():
 
 func _input(event):
 	if prompt.visible and event.is_pressed():
-		get_tree().change_scene_to_file("res://levels/level1.tscn")
+		get_tree().change_scene_to_file(Levels.levels[PlayerVariables.current_level])

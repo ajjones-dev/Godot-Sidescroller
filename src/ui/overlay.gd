@@ -96,4 +96,4 @@ func update_lives_ui():
 
 ## Transitions Screen to Game Over Screen, Updates Score
 func game_over():
-	get_tree().change_scene_to_file(next_scene)
+	get_tree().change_scene_to_file(Levels.levels[0])
