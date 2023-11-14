@@ -25,7 +25,7 @@ func update_physics(delta : float):
 	
 	if Input.is_action_just_pressed("jump") and parent.jump_count <= parent.MAX_JUMP and not parent.has_double_jumped and not parent.is_on_floor():
 		parent.jump_count += 1
-		parent.velocity.y -= parent.JUMP_VELOCITY / 2
+		parent.velocity.y = -parent.JUMP_VELOCITY / 2
 		parent.has_double_jumped = true
 		
 	parent.move_and_slide()
