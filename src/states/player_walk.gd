@@ -27,6 +27,8 @@ func update_physics(delta : float):
 	elif direction > 0:
 		animation_player.flip_h = false
 	
+	parent.raycast.target_position = Vector2(parent.velocity.x, 0) * 40.0
+	
 	if parent.velocity.x == 0:
 		ChangeState.emit(self, "idle")
 	
