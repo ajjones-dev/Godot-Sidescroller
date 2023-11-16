@@ -10,7 +10,7 @@ const SPEED : float = 300.0
 const JUMP_VELOCITY : float = 750.0
 const MAX_JUMP : int = 2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var raycast : RayCast2D = get_node("RayCast2D")
+@onready var hitbox : CollisionShape2D = get_node("CollisionShape2D")
 
 ## Tracking Double Jump status
 var jump_count : int

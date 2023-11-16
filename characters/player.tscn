@@ -125,9 +125,3 @@ animation_name = "walk"
 script = ExtResource("7_mw7fd")
 parent = NodePath("../..")
 animation_name = "fall"
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(0, -16)
-target_position = Vector2(0, 32)
-collide_with_areas = true
-collide_with_bodies = false
