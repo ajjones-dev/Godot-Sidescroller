@@ -83,8 +83,9 @@ radius = 21.0
 height = 86.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-floor_stop_on_slope = false
+floor_constant_speed = true
 floor_max_angle = 0.959931
+floor_snap_length = 20.0
 script = ExtResource("1_aqyyg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -127,4 +128,6 @@ animation_name = "fall"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -16)
-target_position = Vector2(40, 0)
+target_position = Vector2(0, 32)
+collide_with_areas = true
+collide_with_bodies = false

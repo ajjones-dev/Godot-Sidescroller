@@ -14,6 +14,7 @@ func exit():
 
 func update_physics(delta : float):
 	parent.velocity.x = 0
+	parent.velocity.y += gravity * delta
 	if not parent.is_on_floor():
 		parent.jump_count += 1
 		ChangeState.emit(self, "fall")
@@ -26,9 +27,7 @@ func update_physics(delta : float):
 		animation_player.flip_h = true
 	elif direction > 0:
 		animation_player.flip_h = false
-	
-	parent.raycast.target_position = Vector2(parent.velocity.x, 0) * 40.0
-	
+		
 	if parent.velocity.x == 0:
 		ChangeState.emit(self, "idle")
 	
