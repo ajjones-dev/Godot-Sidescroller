@@ -30,6 +30,9 @@ func update_physics(delta : float):
 	if parent.velocity.x == 0:
 		ChangeState.emit(self, "idle")
 	
+	if parent.is_on_floor() and Input.is_action_just_pressed("down"):
+		ChangeState.emit(self, "slide")
+	
 	parent.move_and_slide()
 
 func update_event(event : InputEvent):

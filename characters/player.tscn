@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhdqyg0uua4m5"]
+[gd_scene load_steps=18 format=3 uid="uid://bhdqyg0uua4m5"]
 
 [ext_resource type="Script" path="res://src/characters/player.gd" id="1_aqyyg"]
 [ext_resource type="Texture2D" uid="uid://ujgn8iax6bw7" path="res://assets/sprites/player_tilesheet.png" id="1_jkns5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://src/states/player_jump.gd" id="5_evap7"]
 [ext_resource type="Script" path="res://src/states/player_walk.gd" id="6_i6pna"]
 [ext_resource type="Script" path="res://src/states/player_fall.gd" id="7_mw7fd"]
+[ext_resource type="Script" path="res://src/states/player_slide.gd" id="8_htvd8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x84i2"]
 atlas = ExtResource("1_jkns5")
@@ -23,6 +24,10 @@ region = Rect2(320, 0, 80, 110)
 [sub_resource type="AtlasTexture" id="AtlasTexture_o7dtu"]
 atlas = ExtResource("1_jkns5")
 region = Rect2(160, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giijk"]
+atlas = ExtResource("1_jkns5")
+region = Rect2(80, 220, 80, 110)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwgas"]
 atlas = ExtResource("1_jkns5")
@@ -68,6 +73,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_giijk")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_iwgas")
 }, {
 "duration": 1.0,
@@ -91,7 +104,7 @@ script = ExtResource("1_aqyyg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -55)
 sprite_frames = SubResource("SpriteFrames_fvi7u")
-animation = &"walk"
+animation = &"slide"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -43)
@@ -125,3 +138,8 @@ animation_name = "walk"
 script = ExtResource("7_mw7fd")
 parent = NodePath("../..")
 animation_name = "fall"
+
+[node name="Slide" type="Node" parent="StateMachine" node_paths=PackedStringArray("parent")]
+script = ExtResource("8_htvd8")
+parent = NodePath("../..")
+animation_name = "slide"
