@@ -29,6 +29,8 @@ layer_0/tile_data = PackedInt32Array(-524289, 65538, 0, -458753, 65538, 0, -3932
 
 [node name="Player" parent="." instance=ExtResource("3_fpwdf")]
 position = Vector2(268, 129)
+floor_stop_on_slope = false
+floor_constant_speed = false
 
 [node name="FinishFlag" parent="." instance=ExtResource("4_htb7r")]
 position = Vector2(8543, 69)
