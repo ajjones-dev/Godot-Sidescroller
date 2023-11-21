@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhdqyg0uua4m5"]
+[gd_scene load_steps=19 format=3 uid="uid://bhdqyg0uua4m5"]
 
 [ext_resource type="Script" path="res://src/characters/player.gd" id="1_aqyyg"]
 [ext_resource type="Texture2D" uid="uid://ujgn8iax6bw7" path="res://assets/sprites/player_tilesheet.png" id="1_jkns5"]
@@ -95,6 +95,10 @@ animations = [{
 radius = 21.0
 height = 86.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dg4i"]
+radius = 16.0
+height = 48.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 floor_constant_speed = true
 floor_max_angle = 0.959931
@@ -109,6 +113,11 @@ animation = &"slide"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -43)
 shape = SubResource("CapsuleShape2D_tjfg5")
+
+[node name="SlideCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3dg4i")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 3

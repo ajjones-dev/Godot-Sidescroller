@@ -8,10 +8,11 @@ func enter():
 	if parent.is_on_floor():
 		parent.jump_count = 0
 		parent.has_double_jumped = false
+	parent.hitbox.disabled = true
 	super()
 
 func exit():
-	#parent.hitbox.scale.y = 1.0
+	parent.hitbox.disabled = false
 	super()
 
 func update_physics(delta : float):
