@@ -35,4 +35,5 @@ func update_physics(delta : float):
 
 func update_event(event : InputEvent):
 	if Input.is_action_just_pressed("jump"):
+		parent.velocity.y = -parent.JUMP_VELOCITY / 5.0
 		ChangeState.emit(self, "jump")
