@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctjvbsspu5fb7"]
+[gd_scene load_steps=10 format=3 uid="uid://ctjvbsspu5fb7"]
 
 [ext_resource type="TileSet" uid="uid://l30ed4plrcf4" path="res://assets/tilesheets/ground_tileset.tres" id="1_2o2n1"]
 [ext_resource type="Texture2D" uid="uid://cybqnjgyp1c8c" path="res://assets/backgrounds/colored_grass.png" id="1_pjtaq"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bhdqyg0uua4m5" path="res://characters/player.tscn" id="3_fpwdf"]
 [ext_resource type="Texture2D" uid="uid://chru86mag6oxk" path="res://assets/backgrounds/ground_gradient.png" id="3_h123n"]
 [ext_resource type="PackedScene" uid="uid://bcbhpucd2cwsh" path="res://items/finish_flag.tscn" id="4_htb7r"]
+[ext_resource type="PackedScene" uid="uid://chr362e7dx25n" path="res://items/spawner.tscn" id="5_ymf4n"]
+[ext_resource type="PackedScene" uid="uid://cshnb0gq655hi" path="res://characters/mouse.tscn" id="6_0u30f"]
 
 [node name="Main" type="Node2D"]
 
@@ -58,6 +60,21 @@ layer_0/tile_data = PackedInt32Array(-524289, 65538, 0, -458753, 65538, 0, -3932
 
 [node name="EnemySpawns" type="Node" parent="."]
 
+[node name="Spawner" parent="EnemySpawns" instance=ExtResource("5_ymf4n")]
+position = Vector2(1039, 113)
+enemy_type = ExtResource("6_0u30f")
+x_movement = -999.0
+
+[node name="Spawner2" parent="EnemySpawns" instance=ExtResource("5_ymf4n")]
+position = Vector2(1907, 123)
+enemy_type = ExtResource("6_0u30f")
+x_movement = -999.0
+
+[node name="Spawner3" parent="EnemySpawns" instance=ExtResource("5_ymf4n")]
+position = Vector2(4275, 41)
+enemy_type = ExtResource("6_0u30f")
+x_movement = -300.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Overlay" parent="CanvasLayer" instance=ExtResource("2_wr13u")]
@@ -65,7 +82,6 @@ layer_0/tile_data = PackedInt32Array(-524289, 65538, 0, -458753, 65538, 0, -3932
 [node name="Player" parent="." instance=ExtResource("3_fpwdf")]
 position = Vector2(268, 129)
 floor_stop_on_slope = false
-floor_constant_speed = false
 
 [node name="FinishFlag" parent="." instance=ExtResource("4_htb7r")]
 position = Vector2(12033, 140)

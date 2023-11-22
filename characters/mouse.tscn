@@ -79,6 +79,8 @@ size = Vector2(50, 25)
 size = Vector2(46, 12)
 
 [node name="Mouse" type="CharacterBody2D"]
+floor_max_angle = 0.975639
+floor_snap_length = 30.3
 script = ExtResource("1_qrvo3")
 move_direction = Vector2(-5, 0)
 
