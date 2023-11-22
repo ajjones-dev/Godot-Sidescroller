@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://onnp5lqkc5wo"]
+
+[ext_resource type="Texture2D" uid="uid://cybqnjgyp1c8c" path="res://assets/backgrounds/colored_grass.png" id="1_dfg0i"]
+[ext_resource type="Texture2D" uid="uid://dwmgo7ourdeqx" path="res://assets/backgrounds/sky_gradient.png" id="2_xjos5"]
+[ext_resource type="Texture2D" uid="uid://chru86mag6oxk" path="res://assets/backgrounds/ground_gradient.png" id="3_bgroy"]
+[ext_resource type="TileSet" uid="uid://l30ed4plrcf4" path="res://assets/tilesheets/ground_tileset.tres" id="4_1x0ea"]
+[ext_resource type="PackedScene" uid="uid://c4tdkcuy6igec" path="res://ui/overlay.tscn" id="5_l7686"]
+[ext_resource type="PackedScene" uid="uid://bhdqyg0uua4m5" path="res://characters/player.tscn" id="6_0ktgd"]
+[ext_resource type="PackedScene" uid="uid://bcbhpucd2cwsh" path="res://items/finish_flag.tscn" id="7_c6fjo"]
+
+[node name="Main" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="ColoredGrass" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-120, -512)
+texture = ExtResource("1_dfg0i")
+centered = false
+
+[node name="ColoredGrass2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, -512)
+texture = ExtResource("1_dfg0i")
+centered = false
+
+[node name="SkyGradient" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-120, -1536)
+texture = ExtResource("2_xjos5")
+centered = false
+
+[node name="SkyGradient2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, -1536)
+texture = ExtResource("2_xjos5")
+centered = false
+
+[node name="GroundGradient" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-120, 512)
+texture = ExtResource("3_bgroy")
+centered = false
+
+[node name="GroundGradient2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, 512)
+texture = ExtResource("3_bgroy")
+centered = false
+
+[node name="BackgroundObjects" type="TileMap" parent="."]
+format = 2
+
+[node name="Level" type="TileMap" parent="."]
+tile_set = ExtResource("4_1x0ea")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262145, 2, 15, -196609, 2, 15, -131073, 2, 15, -65537, 2, 15, -1, 2, 15, 65535, 2, 15, 131071, 2, 15, 196607, 2, 15, 262143, 2, 15, 327679, 2, 15, 393215, 2, 15, 458751, 2, 15, 524287, 2, 15, 589823, 2, 15, 655359, 2, 15, 720895, 2, 15, 786431, 65538, 0, 196608, 2, 1, 196609, 2, 1, 196610, 2, 1, 196611, 2, 1, 196612, 2, 1, 196613, 2, 1, 196617, 2, 7, 196618, 2, 6, 196619, 2, 5, 327695, 2, 7, 327696, 2, 6, 327697, 2, 5, 196629, 2, 7, 196630, 2, 6, 196631, 2, 5, 196636, 2, 1, 196637, 2, 1, 196638, 2, 1, 196639, 2, 1, 327716, 2, 3, 262181, 2, 3, 196646, 2, 3, 131111, 2, 3, 65576, 2, 3, 43, 2, 3, -65492, 2, 3, -131027, 2, 3, -196562, 2, 3, -262097, 2, 3, -262094, 2, 4, -196557, 2, 4, -131020, 2, 4, -65483, 2, 4, 54, 2, 4, 65591, 2, 4, 131128, 2, 4, 196665, 2, 4, 262202, 2, 4, 327739, 2, 4, 393276, 2, 4, 327744, 2, 7, 327745, 2, 6, 327746, 2, 5, 327750, 2, 7, 327751, 2, 6, 327752, 2, 5, 131147, 2, 7, 131148, 2, 6, 131149, 2, 5, -65456, 2, 7, -65455, 2, 6, -65454, 2, 5, 131157, 2, 1, 131158, 2, 1, 131159, 2, 1, 131160, 2, 1, 131163, 2, 1, 131162, 2, 1, 131161, 2, 1, 131166, 2, 1, 131167, 2, 1, 131170, 2, 1, 131171, 2, 1, 131174, 2, 1, 131175, 2, 1, 106, 2, 1, 107, 2, 1, 108, 2, 1, 109, 2, 1, 110, 2, 1, 111, 2, 1, 112, 2, 4, 65649, 2, 4, 131186, 2, 4, 196723, 2, 4, 262260, 2, 4, 327797, 2, 4, 196729, 2, 1, 196730, 2, 1, 196731, 2, 1, 196732, 2, 1, 196733, 2, 1, 131241, 2, 1, 131242, 2, 1, 131243, 2, 1, 131244, 2, 1, 131245, 2, 1, 131246, 2, 1, 131247, 2, 1, 131248, 2, 1, 131249, 2, 1, 131250, 2, 1, 131251, 2, 1, 131252, 2, 1, 131253, 2, 1, 131254, 2, 1, 131255, 2, 1, 131256, 2, 1, 131257, 2, 1, 131258, 2, 1, 262144, 65538, 0, 262145, 65538, 0, 262146, 65538, 0, 262147, 65538, 0, 262148, 65538, 0, 262149, 65538, 0, 327685, 65538, 0, 393221, 65538, 0, 458757, 65538, 0, 524293, 65538, 0, 589829, 65538, 0, 655365, 65538, 0, 720901, 65538, 0, 720900, 65538, 0, 720899, 65538, 0, 720898, 65538, 0, 720897, 65538, 0, 720896, 65538, 0, 655360, 65538, 0, 589824, 65538, 0, 524288, 65538, 0, 458752, 65538, 0, 393216, 65538, 0, 327680, 65538, 0, 327681, 65538, 0, 393217, 65538, 0, 458753, 65538, 0, 524289, 65538, 0, 589825, 65538, 0, 655361, 65538, 0, 655362, 65538, 0, 589826, 65538, 0, 524290, 65538, 0, 458754, 65538, 0, 393218, 65538, 0, 327682, 65538, 0, 327683, 65538, 0, 393219, 65538, 0, 458755, 65538, 0, 524291, 65538, 0, 589827, 65538, 0, 655363, 65538, 0, 655364, 65538, 0, 589828, 65538, 0, 524292, 65538, 0, 458756, 65538, 0, 393220, 65538, 0, 327684, 65538, 0, 851967, 65538, 0, 917503, 65538, 0, 983039, 65538, 0, 917504, 65538, 0, 983040, 65538, 0, 983041, 65538, 0, 983042, 65538, 0, 983043, 65538, 0, 983044, 65538, 0, 983045, 65538, 0, 917509, 65538, 0, 786437, 65538, 0, 851973, 65538, 0, 851972, 65538, 0, 786436, 65538, 0, 786435, 65538, 0, 851971, 65538, 0, 917507, 65538, 0, 917508, 65538, 0, 786434, 65538, 0, 786432, 65538, 0, 851968, 65538, 0, 851969, 65538, 0, 851970, 65538, 0, 786433, 65538, 0, 917506, 65538, 0, 917505, 65538, 0, 1048575, 65538, 0, 262172, 65538, 0, 327708, 65538, 0, 393244, 65538, 0, 458780, 65538, 0, 524316, 65538, 0, 589852, 65538, 0, 655388, 65538, 0, 720924, 65538, 0, 786460, 65538, 0, 851996, 65538, 0, 917532, 65538, 0, 983068, 65538, 0, 262173, 65538, 0, 327709, 65538, 0, 393245, 65538, 0, 458781, 65538, 0, 524317, 65538, 0, 589853, 65538, 0, 655389, 65538, 0, 720925, 65538, 0, 786461, 65538, 0, 851997, 65538, 0, 917533, 65538, 0, 983069, 65538, 0, 262174, 65538, 0, 327710, 65538, 0, 393246, 65538, 0, 458782, 65538, 0, 524318, 65538, 0, 589854, 65538, 0, 655390, 65538, 0, 720926, 65538, 0, 786462, 65538, 0, 851998, 65538, 0, 917534, 65538, 0, 983070, 65538, 0, 262175, 65538, 0, 327711, 65538, 0, 393247, 65538, 0, 458783, 65538, 0, 524319, 65538, 0, 589855, 65538, 0, 655391, 65538, 0, 720927, 65538, 0, 786463, 65538, 0, 851999, 65538, 0, 917535, 65538, 0, 983071, 65538, 0)
+
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="EnemySpawns" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Overlay" parent="CanvasLayer" instance=ExtResource("5_l7686")]
+
+[node name="Player" parent="." instance=ExtResource("6_0ktgd")]
+position = Vector2(126, 187)
+
+[node name="FinishFlag" parent="." instance=ExtResource("7_c6fjo")]
+position = Vector2(12978, 137)
+next_scene = "res://ui/level_transition.tscn"
