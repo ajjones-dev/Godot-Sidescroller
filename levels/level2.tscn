@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctjvbsspu5fb7"]
+[gd_scene load_steps=8 format=3 uid="uid://ctjvbsspu5fb7"]
 
 [ext_resource type="TileSet" uid="uid://l30ed4plrcf4" path="res://assets/tilesheets/ground_tileset.tres" id="1_2o2n1"]
+[ext_resource type="Texture2D" uid="uid://cybqnjgyp1c8c" path="res://assets/backgrounds/colored_grass.png" id="1_pjtaq"]
+[ext_resource type="Texture2D" uid="uid://dwmgo7ourdeqx" path="res://assets/backgrounds/sky_gradient.png" id="2_50kig"]
 [ext_resource type="PackedScene" uid="uid://c4tdkcuy6igec" path="res://ui/overlay.tscn" id="2_wr13u"]
 [ext_resource type="PackedScene" uid="uid://bhdqyg0uua4m5" path="res://characters/player.tscn" id="3_fpwdf"]
+[ext_resource type="Texture2D" uid="uid://chru86mag6oxk" path="res://assets/backgrounds/ground_gradient.png" id="3_h123n"]
 [ext_resource type="PackedScene" uid="uid://bcbhpucd2cwsh" path="res://items/finish_flag.tscn" id="4_htb7r"]
 
 [node name="Main" type="Node2D"]
@@ -10,6 +13,38 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="ColoredGrass" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-120, -512)
+texture = ExtResource("1_pjtaq")
+centered = false
+
+[node name="ColoredGrass2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, -512)
+texture = ExtResource("1_pjtaq")
+centered = false
+
+[node name="SkyGradient" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-120, -1536)
+texture = ExtResource("2_50kig")
+centered = false
+
+[node name="SkyGradient2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, -1536)
+texture = ExtResource("2_50kig")
+centered = false
+
+[node name="GroundGradient" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-120, 512)
+texture = ExtResource("3_h123n")
+centered = false
+
+[node name="GroundGradient2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(904, 512)
+texture = ExtResource("3_h123n")
+centered = false
 
 [node name="BackgroundObjects" type="TileMap" parent="."]
 format = 2

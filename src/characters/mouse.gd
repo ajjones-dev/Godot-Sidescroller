@@ -32,9 +32,10 @@ func _ready():
 ## Passes Delta to State Machine for Process
 ## Checks for player collision with hurt vector
 func _physics_process(delta):
-	if hurt_vector.is_colliding() and hurt_vector.get_collider().has_method("take_damage") and damage_timer > damage_speed:
-		hurt_vector.get_collider().take_damage()
-		damage_timer = 0.0
+	if hurt_vector.is_colliding() and hurt_vector.get_collider().is_in_group("player"):
+		if hurt_vector.get_collider().has_method("take_damage") and damage_timer > damage_speed:
+			hurt_vector.get_collider().take_damage()
+			damage_timer = 0.0
 	
 	damage_timer += delta
 	
