@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://d11eg3udxoix7"]
+
+[ext_resource type="Script" path="res://src/characters/fly.gd" id="1_5dfg8"]
+[ext_resource type="Texture2D" uid="uid://pll0geatjq55" path="res://assets/sprites/fly.png" id="1_jbn0h"]
+[ext_resource type="Script" path="res://src/state_machine.gd" id="2_ikhhu"]
+[ext_resource type="Script" path="res://src/states/enemy_fly.gd" id="3_7ilgm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh3qt"]
+atlas = ExtResource("1_jbn0h")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awmf0"]
+atlas = ExtResource("1_jbn0h")
+region = Rect2(70, 0, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1s62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh3qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awmf0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8qa8"]
+radius = 13.0
+height = 38.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipwkm"]
+size = Vector2(45, 8)
+
+[node name="Fly" type="Area2D"]
+script = ExtResource("1_5dfg8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -20)
+sprite_frames = SubResource("SpriteFrames_l1s62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -13)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_r8qa8")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_ikhhu")
+initial_state = NodePath("Fly")
+
+[node name="Fly" type="Node" parent="StateMachine"]
+script = ExtResource("3_7ilgm")
+animation_name = "default"
+
+[node name="Weakspot" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -28)
+shape = SubResource("RectangleShape2D_ipwkm")
+
+[node name="HurtVector" type="RayCast2D" parent="."]
+position = Vector2(0, -14)
+target_position = Vector2(-26, 0)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
