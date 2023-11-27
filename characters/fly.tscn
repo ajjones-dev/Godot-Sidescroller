@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d11eg3udxoix7"]
+[gd_scene load_steps=7 format=3 uid="uid://d11eg3udxoix7"]
 
 [ext_resource type="Script" path="res://src/characters/fly.gd" id="1_5dfg8"]
 [ext_resource type="Texture2D" uid="uid://pll0geatjq55" path="res://assets/sprites/fly.png" id="1_jbn0h"]
-[ext_resource type="Script" path="res://src/state_machine.gd" id="2_ikhhu"]
-[ext_resource type="Script" path="res://src/states/enemy_fly.gd" id="3_7ilgm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sh3qt"]
 atlas = ExtResource("1_jbn0h")
@@ -24,12 +22,8 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8qa8"]
-radius = 13.0
-height = 38.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipwkm"]
 size = Vector2(45, 8)
@@ -40,19 +34,8 @@ script = ExtResource("1_5dfg8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -20)
 sprite_frames = SubResource("SpriteFrames_l1s62")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -13)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_r8qa8")
-
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_ikhhu")
-initial_state = NodePath("Fly")
-
-[node name="Fly" type="Node" parent="StateMachine"]
-script = ExtResource("3_7ilgm")
-animation_name = "default"
+frame = 1
+frame_progress = 0.678268
 
 [node name="Weakspot" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -28)
@@ -63,3 +46,8 @@ position = Vector2(0, -14)
 target_position = Vector2(-26, 0)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.499996, -9.99999)
+scale = Vector2(12.15, 11.1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
