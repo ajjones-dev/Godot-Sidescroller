@@ -1,147 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6fd2766lknge"]
+[gd_scene load_steps=17 format=3 uid="uid://c6fd2766lknge"]
 
 [ext_resource type="Texture2D" uid="uid://cybqnjgyp1c8c" path="res://assets/backgrounds/colored_grass.png" id="1_can74"]
 [ext_resource type="PackedScene" uid="uid://bhdqyg0uua4m5" path="res://characters/player.tscn" id="2_at8go"]
 [ext_resource type="Texture2D" uid="uid://dwmgo7ourdeqx" path="res://assets/backgrounds/sky_gradient.png" id="2_str36"]
 [ext_resource type="Texture2D" uid="uid://chru86mag6oxk" path="res://assets/backgrounds/ground_gradient.png" id="3_m82kt"]
+[ext_resource type="TileSet" uid="uid://wldp8ng0eljg" path="res://assets/tilesheets/background_tileset.tres" id="4_o11ih"]
 [ext_resource type="Texture2D" uid="uid://dh6lrbvol37cm" path="res://assets/tilesheets/spritesheet_ground.png" id="4_py0mx"]
-[ext_resource type="Texture2D" uid="uid://b04n7y2gecr86" path="res://assets/tilesheets/spritesheet_tiles.png" id="4_r1h0l"]
 [ext_resource type="PackedScene" uid="uid://cshnb0gq655hi" path="res://characters/mouse.tscn" id="6_5kc2j"]
 [ext_resource type="PackedScene" uid="uid://d3t783ssx7x7v" path="res://items/bronze_coin.tscn" id="7_ulpxl"]
 [ext_resource type="PackedScene" uid="uid://chr362e7dx25n" path="res://items/spawner.tscn" id="8_mehhp"]
 [ext_resource type="PackedScene" uid="uid://bcbhpucd2cwsh" path="res://items/finish_flag.tscn" id="9_241f6"]
 [ext_resource type="PackedScene" uid="uid://c4tdkcuy6igec" path="res://ui/overlay.tscn" id="10_c6r7n"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1di8w"]
-texture = ExtResource("4_r1h0l")
-texture_region_size = Vector2i(70, 70)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-0:12/0 = 0
-1:12/0 = 0
-2:12/0 = 0
-3:12/0 = 0
-4:12/0 = 0
-5:12/0 = 0
-6:12/0 = 0
-7:12/0 = 0
-0:13/0 = 0
-1:13/0 = 0
-2:13/0 = 0
-3:13/0 = 0
-4:13/0 = 0
-6:13/0 = 0
-0:14/0 = 0
-1:14/0 = 0
-2:14/0 = 0
-3:14/0 = 0
-4:14/0 = 0
-5:14/0 = 0
-6:14/0 = 0
-7:14/0 = 0
-0:15/0 = 0
-1:15/0 = 0
-2:15/0 = 0
-3:15/0 = 0
-4:15/0 = 0
-5:15/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_k4top"]
-tile_size = Vector2i(70, 70)
-sources/0 = SubResource("TileSetAtlasSource_1di8w")
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ddodv"]
 tile_data = PackedInt32Array(65536, 2, 3, 1, 2, 3, 65537, 2, 9)
@@ -789,7 +658,7 @@ texture = ExtResource("3_m82kt")
 centered = false
 
 [node name="BackgroundObjects" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_k4top")
+tile_set = ExtResource("4_o11ih")
 format = 2
 layer_0/tile_data = PackedInt32Array(131082, 131072, 1, 131076, 196608, 5, 131080, 196608, 5, 131078, 196608, 14, 131092, 196608, 14, 262171, 196608, 14, 262172, 196608, 5, 131107, 196608, 5, 131112, 196608, 5, 131116, 196608, 14, 262200, 196608, 14, 262202, 196608, 5, 131120, 131072, 5, 65600, 131072, 5, 131143, 131072, 5, 65607, 131072, 5, 65611, 196608, 5, 393308, 196608, 5, 393315, 196608, 5, 393318, 196608, 14, 393324, 131072, 1, 393323, 262144, 7, 393334, 196608, 7, 393335, 196608, 7, 393336, 196608, 7, 393337, 196608, 6, 393310, 196608, 7, 393311, 196608, 7, 393312, 196608, 7, 65603, 196608, 7, 65604, 196608, 7, 65605, 196608, 7, 65606, 196608, 7, 131109, 196608, 7, 131110, 196608, 7, 131075, 196608, 7, 131074, 196608, 7, 131073, 196608, 7, 131072, 196608, 7, 131111, 196608, 6, 131095, 131072, 5, 393355, 196608, 9, 327819, 196608, 8, 262285, 65536, 3, 393350, 0, 3, 393349, 0, 3, 393348, 0, 5, 458882, 196608, 5, 393346, 196608, 5, 327822, 0, 12, 327825, 0, 12, 131214, 0, 12, 131217, 0, 12, 262288, 65536, 3, 65675, 196608, 15, 65676, 196608, 15, 65677, 196608, 15, 65678, 196608, 15, 65679, 196608, 15, 65680, 196608, 15, 65681, 196608, 15, 65682, 196608, 15)
 layer_1/name = ""
