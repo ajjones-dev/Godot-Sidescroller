@@ -94,22 +94,22 @@ position = Vector2(2941, 23)
 position = Vector2(3430, -338)
 
 [node name="BronzeCoin9" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(3909, 100)
+position = Vector2(3909, 103)
 
 [node name="BronzeCoin10" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(3962, 149)
+position = Vector2(3959, 153)
 
 [node name="BronzeCoin11" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(4014, 193)
+position = Vector2(4011, 201)
 
 [node name="BronzeCoin12" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(4066, 245)
+position = Vector2(4059, 247)
 
 [node name="BronzeCoin13" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(4120, 291)
+position = Vector2(4106, 294)
 
 [node name="BronzeCoin14" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(4172, 342)
+position = Vector2(4153, 340)
 
 [node name="BronzeCoin15" parent="Collectibles" instance=ExtResource("5_msqj1")]
 position = Vector2(5093, 226)
@@ -133,16 +133,16 @@ position = Vector2(6793, 80)
 position = Vector2(7341, -1)
 
 [node name="BronzeCoin22" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(8092, 219)
+position = Vector2(8092, 224)
 
 [node name="BronzeCoin23" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(8141, 265)
+position = Vector2(8141, 270)
 
 [node name="BronzeCoin24" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(8190, 311)
+position = Vector2(8190, 316)
 
 [node name="BronzeCoin25" parent="Collectibles" instance=ExtResource("5_msqj1")]
-position = Vector2(8241, 362)
+position = Vector2(8241, 367)
 
 [node name="BronzeCoin26" parent="Collectibles" instance=ExtResource("5_msqj1")]
 position = Vector2(8622, 164)

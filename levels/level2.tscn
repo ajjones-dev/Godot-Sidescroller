@@ -112,25 +112,25 @@ position = Vector2(6091, -360)
 position = Vector2(6670, -768)
 
 [node name="BronzeCoin15" parent="Collectibles" instance=ExtResource("5_lxghm")]
-position = Vector2(7791, 233)
+position = Vector2(7675, 146)
 
 [node name="BronzeCoin16" parent="Collectibles" instance=ExtResource("5_lxghm")]
-position = Vector2(7722, 160)
+position = Vector2(7620, 87)
 
 [node name="BronzeCoin17" parent="Collectibles" instance=ExtResource("5_lxghm")]
-position = Vector2(7647, 85)
+position = Vector2(7560, 30)
 
 [node name="BronzeCoin18" parent="Collectibles" instance=ExtResource("5_lxghm")]
-position = Vector2(7576, 10)
+position = Vector2(7505, -28)
 
 [node name="BronzeCoin19" parent="Collectibles" instance=ExtResource("5_lxghm")]
-position = Vector2(7505, -67)
+position = Vector2(7452, -87)
 
 [node name="BronzeCoin20" parent="Collectibles" instance=ExtResource("5_lxghm")]
-position = Vector2(7432, -145)
+position = Vector2(7392, -144)
 
 [node name="BronzeCoin21" parent="Collectibles" instance=ExtResource("5_lxghm")]
-position = Vector2(7359, -223)
+position = Vector2(7334, -202)
 
 [node name="BronzeCoin22" parent="Collectibles" instance=ExtResource("5_lxghm")]
 position = Vector2(7924, 10)
