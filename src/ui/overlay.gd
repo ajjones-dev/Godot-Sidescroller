@@ -19,6 +19,7 @@ var time_remaining : float = 300.0
 @export_file("*.tscn") var next_scene
 @onready var goal : Area2D = get_node("../../FinishFlag")
 
+
 ## Called when the node enters the scene tree for the first time.
 func _ready():
 	update_lives_ui()

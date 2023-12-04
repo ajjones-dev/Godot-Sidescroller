@@ -1,5 +1,6 @@
 extends CharacterBody2D
 class_name Player
+
 ## The CharacterBody2D controlled by the player through input.
 ##
 ## All actions are passed through to a [StateMachine] to handle

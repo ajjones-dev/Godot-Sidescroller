@@ -1,6 +1,13 @@
 extends Area2D
 class_name Fly
 
+## Basic flying enemy class, small hitbox and damage vector
+##
+## Can only fly between two points
+## Don't add directly to a scene, add to an enemy spawner to manage
+##
+
+## Enemy variables
 const SPEED : float = 90.0
 var value : int = 5
 var damage_timer : float = 0.0
@@ -11,8 +18,10 @@ var starting_position : Vector2 = Vector2()
 @export var move_direction: Vector2 = Vector2()
 var target_position : Vector2 = Vector2()
 
+## Other nodes
 @onready var hurt_vector : RayCast2D = get_node("HurtVector")
 @onready var _animated_sprite = $AnimatedSprite2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,6 +57,7 @@ func create(spawned_direction : Vector2) -> void:
 ## Visible box much larger than mouse
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
+
 
 ## Player enters Weakspot to destroy enemy
 func _on_body_entered(body):
