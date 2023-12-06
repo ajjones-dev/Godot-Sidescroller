@@ -1,5 +1,9 @@
 extends Control
 
+## Screen control for credits
+##
+## For now, only has back button
+##
 
 ## Button to leave credits screen back to main
 func _on_back_pressed():

@@ -1,5 +1,9 @@
 extends Control
 
+## Main menu, starting screen
+##
+## Return here after game over
+##
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,8 +1,17 @@
 extends State
 class_name PlayerFall
 
+## Fall state for Player CharacterBody
+##
+## Uses gravity, can transition between:
+## Jump, Walk
+##
+
+## Root character body
 @export var parent : CharacterBody2D
 
+
+## _physics_process(delta) assigns gravity to y velocity
 func update_physics(delta):
 	if not parent.is_on_floor():
 		parent.velocity.y += gravity * delta
@@ -24,6 +33,8 @@ func update_physics(delta):
 		parent.has_double_jumped = true
 		ChangeState.emit(self, "jump")
 
+
+## _input(event)
 func update_event(event : InputEvent):
 	if event.is_action_pressed("left") or event.is_action_pressed("right"):
 		ChangeState.emit(self, "walk")
