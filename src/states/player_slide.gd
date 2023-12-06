@@ -25,6 +25,7 @@ func enter():
 		parent.has_double_jumped = false
 		
 	parent.hitbox.disabled = true
+	
 	super()
 
 

@@ -1,13 +1,15 @@
 extends State
 class_name EnemyFall
+## An extension on the [State] Class and a autonomos NPC Fall State
+##
+## Transitions to idle when NPC hits the ground
+##
 
+## Parent node for accessing position and velocity for movement
 @export var parent : CharacterBody2D
 
-# Called when the node enters the scene tree for the first time.
-func enter():
-	super()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+## _physics_process(delta) adds gravity to y velocity
 func update_physics(delta):
 	if not parent.is_on_floor():
 		parent.velocity.y += gravity * delta
