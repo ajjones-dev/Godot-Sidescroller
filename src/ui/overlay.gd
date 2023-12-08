@@ -13,6 +13,7 @@ class_name Overlay
 @onready var score_label : Label = get_node("ScoreContainer/Score")
 @onready var time_label : Label = get_node("TimeContainer/Time")
 @onready var health_label : Label = get_node("HealthContainer/Health")
+@onready var pause_menu : Control = get_node("PauseMenu")
 
 ## Level design
 var time_remaining : float = 300.0
@@ -22,6 +23,7 @@ var time_remaining : float = 300.0
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
+	pause_menu.hide()
 	update_lives_ui()
 	update_score_ui()
 	update_time_ui()
@@ -95,3 +97,38 @@ func update_lives_ui():
 ## Transitions Screen to Game Over Screen, Updates Score
 func game_over():
 	get_tree().change_scene_to_file(Levels.levels[0])
+
+
+func _input(event : InputEvent):
+	if event.is_action_pressed("menu"):
+		if get_tree().paused:
+			unpause()
+		else:
+			pause()
+	
+	if event.is_action_pressed("back") and get_tree().paused:
+		unpause()
+
+## Pause game, make visible Pause Menu
+func pause():
+	pause_menu.show()
+	Input.MOUSE_MODE_CAPTURED
+	get_tree().paused = true
+
+
+## Unpause game, hide Pause Menu
+func unpause():
+	pause_menu.hide()
+	get_tree().paused = false
+
+
+func _on_resume_pressed():
+	unpause()
+
+
+func _on_main_menu_pressed():
+	game_over()
+
+
+func _on_exit_pressed():
+	get_tree().quit()

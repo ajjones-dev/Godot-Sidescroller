@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4tdkcuy6igec"]
+[gd_scene load_steps=14 format=3 uid="uid://c4tdkcuy6igec"]
 
 [ext_resource type="Script" path="res://src/ui/overlay.gd" id="1_pij1q"]
 [ext_resource type="Texture2D" uid="uid://bute0nax5rf8x" path="res://assets/ui/ui_sprites.tres" id="1_rbljw"]
@@ -42,6 +42,22 @@ outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(4, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjpm0"]
+font = ExtResource("3_at40w")
+font_size = 70
+
+[sub_resource type="Theme" id="Theme_8brpg"]
+default_font = ExtResource("3_at40w")
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_pu3d4"]
+default_font = ExtResource("3_at40w")
+default_font_size = 20
+
+[sub_resource type="Theme" id="Theme_o06rm"]
+default_font = ExtResource("3_at40w")
+default_font_size = 20
 
 [node name="Overlay" type="Control"]
 layout_mode = 3
@@ -111,3 +127,71 @@ label_settings = SubResource("LabelSettings_igjd2")
 layout_mode = 2
 text = "01"
 label_settings = SubResource("LabelSettings_4kiib")
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -132.0
+offset_right = 33.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Paused"
+label_settings = SubResource("LabelSettings_kjpm0")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -36.0
+offset_right = 144.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.462745, 0.462745, 0.462745, 0.101961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Resume" type="Button" parent="PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_8brpg")
+text = "Resume"
+
+[node name="MainMenu" type="Button" parent="PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pu3d4")
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="PauseMenu/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_o06rm")
+text = "Exit"
+
+[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
