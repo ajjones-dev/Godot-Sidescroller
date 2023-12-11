@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4tdkcuy6igec"]
+[gd_scene load_steps=15 format=3 uid="uid://c4tdkcuy6igec"]
 
 [ext_resource type="Script" path="res://src/ui/overlay.gd" id="1_pij1q"]
 [ext_resource type="Texture2D" uid="uid://bute0nax5rf8x" path="res://assets/ui/ui_sprites.tres" id="1_rbljw"]
 [ext_resource type="FontFile" uid="uid://cpmavn088uxrw" path="res://assets/ui/PressStart2P-Regular.ttf" id="3_at40w"]
+[ext_resource type="Script" path="res://src/ui/pause_menu.gd" id="4_on0vx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74ncq"]
 atlas = ExtResource("1_rbljw")
@@ -136,6 +137,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_on0vx")
 
 [node name="Label" type="Label" parent="PauseMenu"]
 layout_mode = 1
@@ -179,19 +181,29 @@ theme_override_constants/separation = 25
 
 [node name="Resume" type="Button" parent="PauseMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../MainMenu")
+focus_next = NodePath("../MainMenu")
 theme = SubResource("Theme_8brpg")
 text = "Resume"
 
 [node name="MainMenu" type="Button" parent="PauseMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Resume")
 theme = SubResource("Theme_pu3d4")
 text = "Main Menu"
 
 [node name="Exit" type="Button" parent="PauseMenu/ColorRect/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../MainMenu")
+focus_neighbor_bottom = NodePath("../Resume")
+focus_next = NodePath("../Resume")
+focus_previous = NodePath(".")
 theme = SubResource("Theme_o06rm")
 text = "Exit"
 
-[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/MainMenu" to="PauseMenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/Exit" to="PauseMenu" method="_on_exit_pressed"]

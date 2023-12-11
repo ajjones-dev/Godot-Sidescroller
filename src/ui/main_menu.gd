@@ -9,10 +9,13 @@ extends Control
 func _ready():
 	PlayerVariables.player_score = 0
 	PlayerVariables.player_lives = 3
+	$MarginContainer/HBoxContainer/VBoxContainer/Start.grab_focus()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _on_start_pressed():
 	PlayerVariables.current_level = 1
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().change_scene_to_file("res://ui/level_transition.tscn")
 
 

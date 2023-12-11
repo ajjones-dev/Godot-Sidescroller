@@ -99,36 +99,16 @@ func game_over():
 	get_tree().change_scene_to_file(Levels.levels[0])
 
 
+## Listens for menu button on keyboard or controller
 func _input(event : InputEvent):
-	if event.is_action_pressed("menu"):
-		if get_tree().paused:
-			unpause()
-		else:
-			pause()
-	
-	if event.is_action_pressed("back") and get_tree().paused:
-		unpause()
+	if event.is_action_pressed("menu") and not get_tree().paused:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		$PauseMenu/ColorRect/VBoxContainer/Resume.grab_focus()
+		pause()
+
 
 ## Pause game, make visible Pause Menu
 func pause():
 	pause_menu.show()
-	Input.MOUSE_MODE_CAPTURED
+	Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
-
-
-## Unpause game, hide Pause Menu
-func unpause():
-	pause_menu.hide()
-	get_tree().paused = false
-
-
-func _on_resume_pressed():
-	unpause()
-
-
-func _on_main_menu_pressed():
-	game_over()
-
-
-func _on_exit_pressed():
-	get_tree().quit()
