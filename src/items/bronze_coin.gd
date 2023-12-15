@@ -27,5 +27,5 @@ func _process(delta):
 ## If the body entered is the player or in the player group, call add score and delete.
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		body.add_score(value)
+		body.get_coin(value)
 		queue_free()

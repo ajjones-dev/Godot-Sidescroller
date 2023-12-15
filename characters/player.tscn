@@ -151,3 +151,5 @@ animation_name = "fall"
 script = ExtResource("8_htvd8")
 parent = NodePath("../..")
 animation_name = "slide"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -21,6 +21,9 @@ var has_double_jumped : bool
 @onready var state_machine : StateMachine = $StateMachine
 var overlay : Overlay
 
+@onready var audio_player = $AudioStreamPlayer2D
+var coin_sound = preload("res://assets/audio/coin.ogg")
+
 
 ## Initialize State Machine to handle different player states and abilities
 func _ready():
@@ -64,3 +67,9 @@ func die():
 		get_tree().change_scene_to_file("res://ui/level_transition.tscn")
 	else:
 		overlay.game_over()
+
+
+func get_coin(value : int) -> void:
+	audio_player.stream = coin_sound
+	audio_player.play()
+	add_score(value)
