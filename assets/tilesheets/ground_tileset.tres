@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://l30ed4plrcf4"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://l30ed4plrcf4"]
 
 [ext_resource type="Texture2D" uid="uid://dh6lrbvol37cm" path="res://assets/tilesheets/spritesheet_ground.png" id="1_i2vgn"]
 
@@ -7,6 +7,9 @@ tile_data = PackedInt32Array(65536, 2, 3, 1, 2, 3, 65537, 2, 9)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_4y34f"]
 tile_data = PackedInt32Array(0, 2, 7, 1, 2, 6, 2, 2, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_aiuyh"]
+tile_data = PackedInt32Array(0, 262146, 15, 1, 262146, 14, 2, 262146, 13)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0l37a"]
 
@@ -613,3 +616,4 @@ terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 0.25098, 1)
 sources/2 = SubResource("TileSetAtlasSource_m32ti")
 pattern_0 = SubResource("TileMapPattern_ddodv")
 pattern_1 = SubResource("TileMapPattern_4y34f")
+pattern_2 = SubResource("TileMapPattern_aiuyh")
