@@ -32,9 +32,3 @@ func update_physics(delta):
 		parent.velocity.y = 0
 		parent.has_double_jumped = true
 		ChangeState.emit(self, "jump")
-
-
-## _input(event)
-func update_event(event : InputEvent):
-	if event.is_action_pressed("left") or event.is_action_pressed("right"):
-		ChangeState.emit(self, "walk")
