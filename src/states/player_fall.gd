@@ -3,8 +3,8 @@ class_name PlayerFall
 
 ## Fall state for Player CharacterBody
 ##
-## Uses gravity, can transition between:
-## Jump, Walk
+## Uses gravity, can transition to:
+## Jump, Idle
 ##
 
 ## Root character body

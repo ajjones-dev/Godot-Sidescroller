@@ -5,7 +5,7 @@ class_name PlayerJump
 ##
 ## Will repeat if double_jump has not been used
 ## Transitions to:
-## fall, walk
+## fall
 ##
 
 ## Link to parent node for accessing properties
