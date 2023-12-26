@@ -14,7 +14,7 @@ class_name PlayerJump
 
 ## _ready() adds to jump counter and increases y velocity
 func enter():
-	parent.velocity.y -= parent.JUMP_VELOCITY
+	parent.velocity.y = -parent.JUMP_VELOCITY
 	parent.jump_count += 1
 	
 	super()
@@ -43,7 +43,7 @@ func update_physics(delta : float):
 	# Double Jump, if hasn't double jumped then apply half velocity
 	if Input.is_action_just_pressed("jump") and parent.jump_count <= parent.MAX_JUMP and not parent.has_double_jumped and not parent.is_on_floor():
 		parent.jump_count += 1
-		parent.velocity.y = -parent.JUMP_VELOCITY / 2
+		parent.velocity.y = -parent.JUMP_VELOCITY
 		parent.has_double_jumped = true
 		
 	parent.move_and_slide()
