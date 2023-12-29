@@ -1,7 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://csd5yy2jiuo8s"]
+[gd_scene load_steps=13 format=3 uid="uid://csd5yy2jiuo8s"]
 
+[ext_resource type="Texture2D" uid="uid://dwmgo7ourdeqx" path="res://assets/backgrounds/sky_gradient.png" id="1_m463a"]
+[ext_resource type="Texture2D" uid="uid://dhcidcuvivwca" path="res://assets/backgrounds/deep_desert.png" id="2_w7c32"]
 [ext_resource type="PackedScene" uid="uid://d3t783ssx7x7v" path="res://items/bronze_coin.tscn" id="3_ld855"]
+[ext_resource type="Texture2D" uid="uid://1v1rc2bpvayp" path="res://assets/backgrounds/colored_desert.png" id="3_mitu4"]
+[ext_resource type="PackedScene" uid="uid://chr362e7dx25n" path="res://items/spawner.tscn" id="4_e511v"]
+[ext_resource type="PackedScene" uid="uid://d11eg3udxoix7" path="res://characters/fly.tscn" id="5_26wog"]
 [ext_resource type="TileSet" uid="uid://wldp8ng0eljg" path="res://assets/tilesheets/background_tileset.tres" id="6_6bebt"]
+[ext_resource type="PackedScene" uid="uid://cshnb0gq655hi" path="res://characters/mouse.tscn" id="6_fnepv"]
 [ext_resource type="TileSet" uid="uid://l30ed4plrcf4" path="res://assets/tilesheets/ground_tileset.tres" id="7_lbct8"]
 [ext_resource type="PackedScene" uid="uid://c4tdkcuy6igec" path="res://ui/overlay.tscn" id="8_pqj4k"]
 [ext_resource type="PackedScene" uid="uid://bcbhpucd2cwsh" path="res://items/finish_flag.tscn" id="9_1ubsu"]
@@ -12,6 +18,32 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="SkyGradient2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(512, -1096)
+texture = ExtResource("1_m463a")
+
+[node name="SkyGradient3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1536, -1096)
+texture = ExtResource("1_m463a")
+
+[node name="DeepDesert" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1536, 952)
+texture = ExtResource("2_w7c32")
+
+[node name="DeepDesert2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(512, 952)
+texture = ExtResource("2_w7c32")
+
+[node name="ColoredDesert" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(512, -72)
+texture = ExtResource("3_mitu4")
+
+[node name="ColoredDesert2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1536, -72)
+texture = ExtResource("3_mitu4")
 
 [node name="BackgroundObjects" type="TileMap" parent="."]
 tile_set = ExtResource("6_6bebt")
@@ -268,6 +300,66 @@ position = Vector2(2008, -184)
 position = Vector2(2048, -144)
 
 [node name="EnemySpawns" type="Node" parent="."]
+
+[node name="Spawner" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(1872, -440)
+enemy_type = ExtResource("5_26wog")
+y_movement = 100.0
+
+[node name="Spawner2" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(2440, 144)
+enemy_type = ExtResource("5_26wog")
+y_movement = 100.0
+
+[node name="Spawner3" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(4328, 144)
+enemy_type = ExtResource("5_26wog")
+y_movement = 100.0
+
+[node name="Spawner4" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(5184, 112)
+enemy_type = ExtResource("5_26wog")
+y_movement = 100.0
+
+[node name="Spawner5" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(6352, -128)
+enemy_type = ExtResource("5_26wog")
+y_movement = 100.0
+
+[node name="Spawner6" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(9216, 48)
+enemy_type = ExtResource("5_26wog")
+y_movement = 100.0
+
+[node name="Spawner7" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(10976, 176)
+enemy_type = ExtResource("5_26wog")
+y_movement = 100.0
+
+[node name="Spawner8" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(11400, 32)
+enemy_type = ExtResource("5_26wog")
+y_movement = 100.0
+
+[node name="Spawner9" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(2904, 448)
+enemy_type = ExtResource("6_fnepv")
+x_movement = -150.0
+
+[node name="Spawner10" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(3520, 456)
+enemy_type = ExtResource("6_fnepv")
+x_movement = -200.0
+
+[node name="Spawner11" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(7384, 240)
+enemy_type = ExtResource("6_fnepv")
+x_movement = -200.0
+
+[node name="Spawner12" parent="EnemySpawns" instance=ExtResource("4_e511v")]
+position = Vector2(11856, -40)
+enemy_type = ExtResource("6_fnepv")
+x_movement = -200.0
 
 [node name="FinishFlag" parent="." instance=ExtResource("9_1ubsu")]
 position = Vector2(12088, 0)
