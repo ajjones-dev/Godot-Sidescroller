@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://blv1cfg76058a"]
+
+[ext_resource type="PackedScene" uid="uid://bhdqyg0uua4m5" path="res://characters/player.tscn" id="1_f5mmh"]
+[ext_resource type="PackedScene" uid="uid://bcbhpucd2cwsh" path="res://items/finish_flag.tscn" id="2_b108d"]
+[ext_resource type="PackedScene" uid="uid://c4tdkcuy6igec" path="res://ui/overlay.tscn" id="3_epxd6"]
+
+[node name="Main" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="BackgroundObjects" type="TileMap" parent="."]
+format = 2
+
+[node name="Level" type="TileMap" parent="."]
+format = 2
+
+[node name="Collectibles" type="Node" parent="."]
+
+[node name="EnemySpawns" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_f5mmh")]
+position = Vector2(240, -664)
+
+[node name="FinishFlag" parent="." instance=ExtResource("2_b108d")]
+position = Vector2(568, -680)
+next_scene = "res://ui/level_transition.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Overlay" parent="CanvasLayer" instance=ExtResource("3_epxd6")]
