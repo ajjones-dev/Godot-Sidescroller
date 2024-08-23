@@ -20,7 +20,7 @@ func load_highscore():
 	if not FileAccess.file_exists(highscores_file):
 		create_highscore()
 	
-	var file = FileAccess.open(highscores_file, FileAccess.READ)
+	var _file = FileAccess.open(highscores_file, FileAccess.READ)
 	
 
 

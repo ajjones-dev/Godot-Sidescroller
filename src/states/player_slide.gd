@@ -58,7 +58,7 @@ func update_physics(delta : float):
 
 
 ## Processes jump input, adds bonus height for a slide jump
-func update_event(event : InputEvent):
+func update_event(_event : InputEvent):
 	if Input.is_action_just_pressed("jump"):
 		parent.velocity.y = -parent.JUMP_VELOCITY / jump_boost
 		ChangeState.emit(self, "jump")

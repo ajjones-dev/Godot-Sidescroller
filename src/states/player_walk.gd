@@ -22,7 +22,7 @@ func enter():
 
 
 ## _physics_process(delta)
-func update_physics(delta : float):
+func update_physics(_delta : float):
 	parent.velocity.x = 0
 	
 	# Floor detection to change to fall state
@@ -53,7 +53,6 @@ func update_physics(delta : float):
 
 
 ## _input(event) to detect if changes to jump state is needed
-func update_event(event : InputEvent):
+func update_event(_event : InputEvent):
 	if Input.is_action_just_pressed("jump") and parent.is_on_floor():
 		ChangeState.emit(self, "jump")
-

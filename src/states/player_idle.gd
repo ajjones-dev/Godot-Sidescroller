@@ -24,7 +24,7 @@ func enter():
 
 
 ## _physics_process(delta). Awaits transition conditions
-func update_physics(delta : float):
+func update_physics(_delta : float):
 	if not parent.is_on_floor():
 		ChangeState.emit(self, "fall")
 	elif Input.is_action_pressed("left") or Input.is_action_pressed("right"):

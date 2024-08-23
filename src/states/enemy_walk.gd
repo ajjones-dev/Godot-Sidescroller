@@ -18,7 +18,7 @@ func enter():
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-func update_physics(delta):	
+func update_physics(_delta):	
 	parent.velocity = parent.global_position.direction_to(parent.target_position) * parent.SPEED
 	
 	# Fall detection. Switches to Fall State if not touching the floor.

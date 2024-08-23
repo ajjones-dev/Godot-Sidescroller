@@ -19,7 +19,7 @@ var states : Dictionary = {}
 
 ## Initialzes the state machine by grabbing child state nodes and adding
 ## to a dictonary.
-func init(parent : CharacterBody2D) -> void:
+func init(_parent : CharacterBody2D) -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
